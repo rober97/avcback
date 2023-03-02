@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router();
 const multer = require('multer')
-const npc = require('../src/controllers/npc')
 const user = require('../src/controllers/users')
 const file = require('../src/controllers/files')
 const player = require('../src/controllers/player')
