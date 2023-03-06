@@ -15,6 +15,7 @@ const port = process.env.PORT || 8080;
 app.use(cors()) //TODO EL MUNDO
 
 //Conexion a base de datos
+
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@clustershot.15wdu.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log('Base de datos conectada'))

@@ -119,7 +119,7 @@ const loginUser = async (req, res) => {
         if (user_search != null) {
             obj = {
                 success: true,
-                msg: "Credenciales erroneas",
+                msg: "Ingreso exitoso",
                 user: user_search
             }
         } else {
