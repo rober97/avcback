@@ -17,7 +17,6 @@ console.log('DIRNAME: ', CURRENT_DIR)
 
 const fileFilter = (req, file, cb) => {
     const allowedTypes = ['application/pdf']
-
     if (!allowedTypes.includes(file.mimetype)) {
         const error = new Error('Wrong file type')
         error.code = 'LIMIT_FILE_TYPES'
@@ -39,17 +38,22 @@ const storage = multer.diskStorage({
     },
     filename
 })
+const upload = multer({ storage: storage }).single('file');
 
-const multerUpload = multer({
-    limits: {
-        fileSize: 1000000
-    },
-    fileFilter,
-    storage: storage
+// const multerUpload = multer({
+//     limits: {
+//         fileSize: 1000000
+//     },
+//     fileFilter,
+//     storage: storage
 
-})
+// })
 
-
+router.post("/upload-file", (req, res) => {
+    upload(req, res, function (err) {
+        user.uploadFile(req, res)
+    })
+});
 
 
 router.get("/", async (req, res) => {
@@ -61,7 +65,7 @@ router.get("/", async (req, res) => {
 })
 
 
-const upload = multer({ storage: storage }).single('file');
+
 
 //POST
 router.post("/new-npc", (req, res) => npc.newNpc(req, res))
@@ -80,11 +84,7 @@ router.post("/login", (req, res) => user.loginUser(req, res))
 router.post("/new-user", (req, res) => user.newUser(req, res))
 router.post("/delete-user", (req, res) => user.deleteUser(req, res))
 //router.post("/upload-file", (req, res) => user.uploadFile(req, res))
-router.post("/upload-file", (req, res) => {
-    upload(req, res, function (err) {
-        user.uploadFile(req, res)
-    })
-});
+
 //router.post("/update-user", (req, res) => user.updateUser(req, res, NAME_FILE))
 //GET
 router.get("/list-user", (req, res) => user.listUser(req, res))
