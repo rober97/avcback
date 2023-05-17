@@ -70,6 +70,7 @@ const deleteUser = async (req, res) => {
 const uploadFile = async (req, res) => {
     try {
         let data = req.body
+        console.log('DATA FILEEEE: ', req.file)
         const file = new File({
             nombre: req.file.filename,
             ubicacion: req.file.path,

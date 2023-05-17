@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const fileSchema = new Schema({
     nombre: String,
     ubicacion: String,
-    type: String,
     id_user: String,
+    type: String,
 })
 
 // Crear modelo

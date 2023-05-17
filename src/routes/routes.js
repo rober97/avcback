@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router();
 const multer = require('multer')
-const user = require('../src/controllers/users')
-const file = require('../src/controllers/files')
-const player = require('../src/controllers/player')
+const user = require('../controllers/users')
+const file = require('../controllers/files')
+const player = require('../controllers/player')
 
 //SUBIDA DE ARCHIVOS
 const { dirname, join } = require('path')
