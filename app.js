@@ -39,7 +39,6 @@ io.on('connection', (socket) => {
 
 // parse application/x-www-form-urlencoded
 // parse application/json
-
 const port = process.env.PORT || 3000;
 app.use(cors()) //TODO EL MUNDO
 
