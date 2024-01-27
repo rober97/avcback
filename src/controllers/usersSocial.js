@@ -89,7 +89,6 @@ const updateUser = async (req, res, namefile) => {
         const user = await User.findOne({
             _id: data.id,
         })
-        console.log('USER ENCONTRADO: ', user)
         if (user) {
             console.log("BODY UPDATE: ", user)
             Object.assign(user, req.body)
