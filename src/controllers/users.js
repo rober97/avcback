@@ -70,17 +70,26 @@ const deleteUser = async (req, res) => {
 const uploadFile = async (req, res) => {
     try {
         let data = req.body
-        console.log('DATA FILEEEE: ', req.file)
-        const file = new File({
-            nombre: req.file.filename,
-            ubicacion: req.file.path,
-            id_user: data.id_user,
-            type: data.type
-        });
-        file.save().then((response) => {
-            res.send(response)
-            res.end();
-        });
+        console.log('DATA FILEEEE: ', data)
+
+        let responses = []; // Almacenamos las respuestas aquí.
+
+        // Utilizamos Promise.all para esperar a que todas las promesas se resuelvan antes de enviar la respuesta.
+        await Promise.all(req.files.map(async (el) => {
+            const file = new File({
+                nombre: el.filename,
+                ubicacion: el.path,
+                id_user: data.id_user,
+                type: data.type
+            });
+
+            // Guardamos la respuesta de la promesa en la matriz de respuestas.
+            let response = await file.save();
+            responses.push(response);
+        }));
+
+        // Enviar todas las respuestas de una vez.
+        res.send(responses);
     } catch (error) {
         console.log(error)
     }
@@ -138,11 +147,13 @@ const loginUser = async (req, res) => {
     }
 }
 
+
+
 module.exports = {
     newUser,
     listUser,
     deleteUser,
     uploadFile,
     updateUser,
-    loginUser
+    loginUser,
 }

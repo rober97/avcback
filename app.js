@@ -6,10 +6,41 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express();
+const { Server } = require('socket.io');
+const http = require('http');
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: "http://localhost:9000",  // <- la dirección de tu cliente
+        methods: ["GET", "POST"],
+        allowedHeaders: ["my-custom-header"],
+        credentials: true
+    }
+});
+io.on('connection', (socket) => {
+    console.log('a user connected');
+    // Unir al usuario a una sala específica
+    socket.on('join_room', (roomId) => {
+        socket.join(roomId);
+        console.log(`User ${socket.id} joined room ${roomId}`);
+    });
+
+    // Escuchar mensajes y reenviarlos a la misma sala
+    socket.on('send_message', ({ roomId, message }) => {
+        console.log("SE EMITE EVENTOOOOO PARA ENVIAR MENSAJEEEEEEEEE")
+        message.sender = 'received'
+        socket.to(roomId).emit('receive_message', message);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+});
+
 // parse application/x-www-form-urlencoded
 // parse application/json
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3000;
 app.use(cors()) //TODO EL MUNDO
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,10 +72,11 @@ app.use((err, req, res, next) => {
 })
 
 //Middlewares
-
-app.listen(port, () => {
+server.listen(port, () => {
     console.log('Servidor levantado en el puerto: ' + port)
 })
+
+
 
 
 
