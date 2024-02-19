@@ -40,7 +40,8 @@ const getChatsByUser = async (req, res) => {
                 chatId: chat._id, // Podrías necesitar la ID del chat para abrirlo en el frontend
                 otherUser: {
                     id: otherUser._id,
-                    username: otherUser.username
+                    username: otherUser.username,
+                    imageUrl: otherUser.imageUrl
                 },
                 lastMessage: lastMessage ? {
                     content: lastMessage.content,
