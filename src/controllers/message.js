@@ -55,34 +55,40 @@ const getSentMessagesBetweenUsers = async (req, res) => {
         const currentUser = req.params.currentUser;
         const targetUser = req.params.targetUser;
 
-        console.log('CURRENT USER: ', currentUser)
-        console.log('TARGET: ', targetUser)
+        console.log('CURRENT USER: ', currentUser);
+        console.log('TARGET USER: ', targetUser);
 
-        // Verificar que se han proporcionado ambos ID
+        // Verificar que se han proporcionado ambos ID y que no son iguales
         if (!currentUser || !targetUser) {
             return res.json({ success: false, message: 'Ambos ID de usuario son obligatorios.' });
         }
 
+        if (currentUser === targetUser) {
+            return res.json({ success: false, message: 'Los ID de usuario deben ser diferentes.' });
+        }
+
         // Buscar todos los mensajes donde:
         // 1) El remitente es el "currentUser" y el receptor es el "targetUser"
-        // 2) O el remitente es el "targetUser" y el receptor es el "currentUser"
+        // 2) El remitente es el "targetUser" y el receptor es el "currentUser"
         const messages = await Message.find({
             $or: [
                 { sender: currentUser, recipient: targetUser },
                 { sender: targetUser, recipient: currentUser }
             ]
         })
-            .populate('recipient', 'username') // Si aún necesitas información adicional del receptor
-            .sort('-createdAt'); // Esto ordenará los mensajes desde el más reciente al más antiguo.
+            .populate('sender', 'username')   // Agrega información del remitente si es necesario
+            .populate('recipient', 'username') // Agrega información del receptor si es necesario
+            .sort('-createdAt'); // Ordena los mensajes del más reciente al más antiguo
 
         // Enviar una respuesta con los mensajes encontrados
         res.json({ success: true, data: messages });
 
     } catch (error) {
         console.error('Error al obtener los mensajes entre usuarios:', error);
-        res.status(500).json({ success: false, message: 'Error del servidor.' });
+        res.status(500).json({ success: false, message: 'Error del servidor.', error: error.message });
     }
 };
+
 
 
 

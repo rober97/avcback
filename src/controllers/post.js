@@ -114,6 +114,7 @@ const listPost = async (req, res) => {
         // Poblar el campo user con la información completa del usuario que hizo la publicación
         // y también poblamos el campo user dentro de comments para obtener el nombre de quien comenta
         const posts = await Post.find()
+            .sort({ 'createdAt': -1 })  // Ordenar por fecha de creación de forma descendente
             .skip(skip)
             .limit(size)
             .populate('user')

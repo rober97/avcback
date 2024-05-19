@@ -35,6 +35,47 @@ const newUser = async (req, res) => {
 }
 
 
+const followUser = async (req, res) => {
+    const { userId, targetUserId } = req.body;
+
+    try {
+        // Asegurarse de que no se siga al mismo usuario dos veces
+        const user = await User.findById(userId);
+        if (user.following.indexOf(targetUserId) === -1) {
+            await User.findByIdAndUpdate(userId, { $push: { following: targetUserId } });
+            await User.findByIdAndUpdate(targetUserId, { $push: { followers: userId } });
+            res.json({ message: "Ahora estás siguiendo al usuario.", success: true });
+        } else {
+            res.json({ message: "Ya sigues a este usuario.", success: false });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error interno del servidor.", success: false });
+    }
+};
+
+const unfollowUser = async (req, res) => {
+    const { userId, targetUserId } = req.body;
+
+    try {
+        // Asegurarse de que el usuario esté actualmente siguiendo al objetivo
+        const user = await User.findById(userId);
+        if (user.following.indexOf(targetUserId) > -1) {
+            await User.findByIdAndUpdate(userId, { $pull: { following: targetUserId } });
+            await User.findByIdAndUpdate(targetUserId, { $pull: { followers: userId } });
+            res.json({ message: "Has dejado de seguir al usuario.", success: true });
+        } else {
+            res.json({ message: "No sigues a este usuario.", success: false });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error interno del servidor.", success: false });
+    }
+};
+
+
+
+
 const loginUser = async (req, res) => {
     try {
         const data = req.body;
@@ -66,13 +107,14 @@ const getUserById = async (req, res) => {
     try {
         let data = req.body;
         console.log('DATA: ', data)
-        const user_search = await User.findOne({
-            _id: data.id
-        })
-        console.log('USER FOUND: ', user_search)
-        if (user_search) {
+        if (data.id) {
+            const user_search = await User.findOne({
+                _id: data.id
+            })
+            console.log('USER FOUND: ', user_search)
             res.json({ success: true, user: user_search })
-        } else {
+        }
+        else {
             res.json({ success: false, user: [] })
         }
 
@@ -187,5 +229,7 @@ module.exports = {
     getUserById,
     updateUser,
     listPostByUser,
-    getUsersPaginated
+    getUsersPaginated,
+    unfollowUser,
+    followUser
 }

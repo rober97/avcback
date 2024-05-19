@@ -9,7 +9,7 @@ const post = require('../controllers/post')
 const file = require('../controllers/files')
 const player = require('../controllers/player')
 
-
+const Item = require('../controllers/items')
 
 //SUBIDA DE ARCHIVOS
 // const { dirname, join } = require('path')
@@ -130,11 +130,27 @@ router.post("/update-like", (req, res) => post.updateLikes(req, res))
 router.post("/add-comment", (req, res) => post.addComment(req, res))
 router.get("/get-list-users", (req, res) => userSocial.getUsersPaginated(req, res))
 
+
 router.post("/create-message", (req, res) => message.newMessage(req, res))
 router.get("/messages-between/:currentUser/:targetUser", (req, res) => message.getSentMessagesBetweenUsers(req, res))
 router.get("/chat-by-user/:userId", (req, res) => chat.getChatsByUser(req, res))
-
+router.delete("/deleteChat/:chatId", (req, res) => chat.deleteChatById(req, res))
 
 router.get("/list-post", (req, res) => post.listPost(req, res))
 router.get("/list-post-by-user", (req, res) => userSocial.listPostByUser(req, res))
+
+router.post("/follow", (req, res) => userSocial.followUser(req, res))
+router.post("/unfollow", (req, res) => userSocial.unfollowUser(req, res))
+
+
+
+// SUPERMARKET
+router.post("/create-item", (req, res) => Item.newItem(req, res))
+router.get("/list-market", (req, res) => Item.listItems(req, res))
+router.delete('/delete-item/:id', (req, res) => Item.deleteItem(req, res))
+
+router.get('/search-items', (req, res) => Item.searchItems(req, res));
+router.get('/recommend-items', (req, res) => Item.recommendItems(req, res));
+router.get('/list-items-by-market', (req, res) => Item.listItemsByMarket(req, res))
+
 module.exports = router

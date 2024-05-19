@@ -2,6 +2,29 @@ const Chat = require('../models/chatModel')
 const User = require('../models/userSocial');
 const Message = require('../models/messageModel')
 
+
+// Controlador para eliminar un chat
+const deleteChatById = async (req, res) => {
+    try {
+        const chatId = req.params.chatId;
+
+        if (!chatId) {
+            return res.status(400).json({ success: false, message: 'ID del chat no proporcionado.' });
+        }
+
+        // Elimina el chat
+        await Chat.findByIdAndDelete(chatId);
+
+        // Opcional: Elimina todos los mensajes asociados a ese chat
+        await Message.deleteMany({ chatId: chatId });
+
+        res.json({ success: true, message: 'Chat eliminado con éxito.' });
+    } catch (error) {
+        console.error('Error al eliminar el chat:', error);
+        res.status(500).json({ success: false, message: 'Error del servidor.' });
+    }
+}
+
 const getChatsByUser = async (req, res) => {
     try {
         // Extraer el ID del usuario desde los parámetros de la petición
@@ -59,6 +82,7 @@ const getChatsByUser = async (req, res) => {
 }
 
 module.exports = {
-    getChatsByUser
+    getChatsByUser,
+    deleteChatById
 }
 
