@@ -8,8 +8,10 @@ const userSocial = require('../controllers/usersSocial')
 const post = require('../controllers/post')
 const file = require('../controllers/files')
 const player = require('../controllers/player')
+const marketController = require('../controllers/market')
 
 const Item = require('../controllers/items')
+const cityController = require('../controllers/cities');
 
 //SUBIDA DE ARCHIVOS
 // const { dirname, join } = require('path')
@@ -153,4 +155,14 @@ router.get('/search-items', (req, res) => Item.searchItems(req, res));
 router.get('/recommend-items', (req, res) => Item.recommendItems(req, res));
 router.get('/list-items-by-market', (req, res) => Item.listItemsByMarket(req, res))
 
+//Market
+
+router.get('/list-items-by-market', (req, res) => marketController.listItemsByMarket(req, res));
+router.get('/markets-by-city/:cityId',(req, res) => marketController.getMarketsByCity(req, res));
+router.get('/all-markets',(req, res) => marketController.listAllMarkets(req, res));
+router.post('/create-market', (req, res) =>marketController.createMarket(req, res));
+
+
+router.get('/all-cities', (req, res) =>cityController.listAllCities(req, res));
+router.post('/create-city',(req, res) => cityController.createCity(req, res));
 module.exports = router

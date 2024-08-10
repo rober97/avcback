@@ -51,6 +51,7 @@ console.log('PASS: ', process.env.PASSWORD)
 console.log('USER: ', process.env.USER)
 console.log('DBNAME: ', process.env.DBNAME)
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@clustershot.15wdu.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
+console.log(uri)
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e))

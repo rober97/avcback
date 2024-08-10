@@ -8,8 +8,19 @@ const marketSchema = new Schema({
         required: true,
         unique: true
     },
-    direccion: String,
-    telefono: String
+    direccion: {
+        type: String,
+        required: true
+    },
+    telefono: {
+        type: String,
+        required: true
+    },
+    ciudad: {
+        type: Schema.Types.ObjectId,
+        ref: 'cities',
+        required: true
+    }
 });
 
 const Market = mongoose.model('markets', marketSchema);
