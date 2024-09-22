@@ -118,6 +118,8 @@ router.post("/new-post", upload.single("image"), (req, res) =>
 );
 
 router.post("/getUserById", (req, res) => userSocial.getUserById(req, res));
+router.post("/getUserByUUID", (req, res) => userSocial.getUserByUUID(req, res));
+router.post("/getUUIDUser", (req, res) => userSocial.getUUIDUser(req, res));
 router.post("/updateUser", (req, res) => userSocial.updateUser(req, res));
 router.post("/update-like", (req, res) => post.updateLikes(req, res));
 
