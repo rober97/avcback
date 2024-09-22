@@ -11,7 +11,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:9000",  // <- la dirección de tu cliente
+        origin: "https://avc-1dbca99a8369.herokuapp.com:9000",  // <- la dirección de tu cliente
         methods: ["GET", "POST"],
         allowedHeaders: ["my-custom-header"],
         credentials: true
