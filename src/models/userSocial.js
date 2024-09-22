@@ -13,19 +13,12 @@ const userSocialSchema = new Schema({
         required: true,
         unique: true
     },
-    password: { // Asegúrate de nunca guardar contraseñas en texto plano. Siempre usa algún método de hash como bcrypt.
+    password: {
         type: String,
         required: true
     },
-
-    imageUrl: { // Asegúrate de nunca guardar contraseñas en texto plano. Siempre usa algún método de hash como bcrypt.
-        type: String,
-        required: false
-    },
-    bio: { // Asegúrate de nunca guardar contraseñas en texto plano. Siempre usa algún método de hash como bcrypt.
-        type: String,
-        required: false
-    },
+    imageUrl: String,
+    bio: String,
     followers: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
@@ -42,10 +35,12 @@ const userSocialSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
     }],
-    // puedes agregar más campos como email, nombre completo, etc. según las necesidades
+    
+    minecraftUUID: String,
+    minecraftToken: String,
+    minecraftUsername: String,  // Nuevo campo para almacenar el nombre de usuario de Minecraft
 });
 
-// Crear modelo
 const User = mongoose.model('usersSocial', userSocialSchema);
 
 module.exports = User;

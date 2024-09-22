@@ -1,0 +1,434 @@
+achievements:
+  phantom_slayer:
+    name: "Asesino de Phantoms"
+    description: "Mata 15 phantoms"
+    type: "mob_kill"
+    target: "PHANTOM"
+    count: 15
+
+  beaconator:
+    name: "Activador de Faros"
+    description: "Activa 3 faros"
+    type: "block_use"
+    target: "BEACON"
+    count: 3
+
+  librarian:
+    name: "Bibliotecario"
+    description: "Crea 10 mesas de encantamiento"
+    type: "block_place"
+    target: "ENCHANTING_TABLE"
+    count: 10
+
+  lava_fisherman:
+    name: "Pescador en Lava"
+    description: "Pesca 5 ítems en lava"
+    type: "fishing"
+    target: "lava"
+    count: 5
+
+  mountain_climber:
+    name: "Escalador de Montañas"
+    description: "Sube a una montaña de al menos 200 bloques de altura"
+    type: "reach_height"
+    target: "200"
+    count: 1
+
+  sponge_collector:
+    name: "Recolector de Esponjas"
+    description: "Cosecha 10 esponjas"
+    type: "block_break"
+    target: "SPONGE"
+    count: 10
+
+  deep_sea_diver:
+    name: "Buzo de Profundidades"
+    description: "Nada 100 bloques en aguas profundas"
+    type: "swim_distance"
+    target: "deep_ocean"
+    count: 100
+
+  slime_hunter:
+    name: "Cazador de Slimes"
+    description: "Mata 30 slimes"
+    type: "mob_kill"
+    target: "SLIME"
+    count: 30
+
+  builder_savant:
+    name: "Constructor Genial"
+    description: "Coloca 1000 bloques de cualquier tipo"
+    type: "block_place"
+    target: "ANY"
+    count: 1000
+
+  ice_collector:
+    name: "Recolector de Hielo"
+    description: "Recolecta 50 bloques de hielo"
+    type: "block_break"
+    target: "ICE"
+    count: 50
+
+  piglin_brute_slayer:
+    name: "Asesino de Brutos Piglins"
+    description: "Mata 10 brutos piglins"
+    type: "mob_kill"
+    target: "PIGLIN_BRUTE"
+    count: 10
+
+  turtle_rider:
+    name: "Jinete de Tortugas"
+    description: "Monta una tortuga durante 200 bloques"
+    type: "ride_distance"
+    target: "TURTLE"
+    count: 200
+
+  wood_collector:
+    name: "Recolector de Madera"
+    description: "Corta 500 bloques de cualquier tipo de madera"
+    type: "block_break"
+    target: "ANY_WOOD"
+    count: 500
+
+  ravager_slayer:
+    name: "Asesino de Devastadores"
+    description: "Mata 5 devastadores"
+    type: "mob_kill"
+    target: "RAVAGER"
+    count: 5
+
+  treasure_digger:
+    name: "Excavador de Tesoros"
+    description: "Encuentra 10 cofres enterrados"
+    type: "block_use"
+    target: "BURIED_TREASURE"
+    count: 10
+
+  enderman_farmer:
+    name: "Granjero de Endermans"
+    description: "Recolecta 64 perlas de ender"
+    type: "item_collect"
+    target: "ENDER_PEARL"
+    count: 64
+
+  drown_slayer:
+    name: "Asesino de Ahogados"
+    description: "Mata 25 ahogados"
+    type: "mob_kill"
+    target: "DROWNED"
+    count: 25
+
+  potion_master:
+    name: "Maestro de Pociones"
+    description: "Crea 50 pociones de cualquier tipo"
+    type: "crafting"
+    target: "POTION"
+    count: 50
+
+  fox_tamer:
+    name: "Domador de Zorros"
+    description: "Domestica 5 zorros"
+    type: "mob_tame"
+    target: "FOX"
+    count: 5
+
+  netherite_collector:
+    name: "Recolector de Netherita"
+    description: "Obtén 20 lingotes de netherita"
+    type: "item_collect"
+    target: "NETHERITE_INGOT"
+    count: 20
+
+  beacon_builder:
+    name: "Constructor de Faro"
+    description: "Construye un faro completo"
+    type: "block_place"
+    target: "BEACON"
+    count: 1
+
+  horse_tamer:
+    name: "Domador de Caballos"
+    description: "Domestica 3 caballos"
+    type: "mob_tame"
+    target: "HORSE"
+    count: 3
+
+  wither_slayer:
+    name: "Asesino del Wither"
+    description: "Mata al Wither"
+    type: "mob_kill"
+    target: "WITHER"
+    count: 1
+
+  cat_collector:
+    name: "Coleccionista de Gatos"
+    description: "Domestica 5 gatos"
+    type: "mob_tame"
+    target: "CAT"
+    count: 5
+
+  redstone_master:
+    name: "Maestro de la Redstone"
+    description: "Coloca 100 bloques de redstone"
+    type: "block_place"
+    target: "REDSTONE_BLOCK"
+    count: 100
+
+  zombie_villager_curer:
+    name: "Sanador de Aldeanos Zombies"
+    description: "Cura 10 aldeanos zombies"
+    type: "mob_cure"
+    target: "ZOMBIE_VILLAGER"
+    count: 10
+
+  ghast_hunter:
+    name: "Cazador de Ghasts"
+    description: "Mata 10 ghasts"
+    type: "mob_kill"
+    target: "GHAST"
+    count: 10
+
+  elytra_flyer:
+    name: "Piloto de Elytra"
+    description: "Vuela 1,000 bloques con una elytra"
+    type: "fly_distance"
+    target: "ELYTRA"
+    count: 1000
+
+  pumpkin_farmer:
+    name: "Granjero de Calabazas"
+    description: "Cosecha 100 calabazas"
+    type: "block_break"
+    target: "PUMPKIN"
+    count: 100
+
+  sugar_cane_harvester:
+    name: "Recolector de Caña de Azúcar"
+    description: "Cosecha 200 cañas de azúcar"
+    type: "block_break"
+    target: "SUGAR_CANE"
+    count: 200
+
+  nether_explorer:
+    name: "Explorador del Nether"
+    description: "Camina 5,000 bloques en el Nether"
+    type: "walk_distance"
+    target: "nether"
+    count: 5000
+
+  blaze_hunter:
+    name: "Cazador de Blazes"
+    description: "Mata 30 blazes"
+    type: "mob_kill"
+    target: "BLAZE"
+    count: 30
+
+  enderman_slayer:
+    name: "Asesino de Endermans"
+    description: "Mata 25 endermans"
+    type: "mob_kill"
+    target: "ENDERMAN"
+    count: 25
+
+  turtle_egg_protector:
+    name: "Protector de Huevos de Tortuga"
+    description: "Protege 5 huevos de tortuga hasta que eclosionen"
+    type: "block_protect"
+    target: "TURTLE_EGG"
+    count: 5
+
+  rabbit_hunter:
+    name: "Cazador de Conejos"
+    description: "Mata 50 conejos"
+    type: "mob_kill"
+    target: "RABBIT"
+    count: 50
+
+  piglin_trader:
+    name: "Comerciante de Piglins"
+    description: "Intercambia 10 veces con Piglins"
+    type: "trade"
+    target: "PIGLIN"
+    count: 10
+
+  village_hero:
+    name: "Héroe de la Aldea"
+    description: "Completa 5 incursiones"
+    type: "raid_complete"
+    target: "RAID"
+    count: 5
+
+  cave_spider_slayer:
+    name: "Asesino de Arañas de Cueva"
+    description: "Mata 20 arañas de cueva"
+    type: "mob_kill"
+    target: "CAVE_SPIDER"
+    count: 20
+
+  iron_golem_builder:
+    name: "Constructor de Golems de Hierro"
+    description: "Crea 10 golems de hierro"
+    type: "mob_create"
+    target: "IRON_GOLEM"
+    count: 10
+
+  honey_collector:
+    name: "Recolector de Miel"
+    description: "Recolecta miel de 10 colmenas"
+    type: "block_use"
+    target: "BEEHIVE"
+    count: 10
+
+  diamond_miner:
+    name: "Minero de Diamantes"
+    description: "Mina 50 bloques de diamante"
+    type: "block_break"
+    target: "DIAMOND_ORE"
+    count: 50
+
+  desert_explorer:
+    name: "Explorador del Desierto"
+    description: "Camina 5,000 bloques en el desierto"
+    type: "walk_distance"
+    target: "desert"
+    count: 5000
+
+  lava_survivor:
+    name: "Sobreviviente de Lava"
+    description: "Sobrevive a una caída en lava"
+    type: "damage"
+    target: "LAVA"
+    count: 1
+
+  wolf_tamer:
+    name: "Domador de Lobos"
+    description: "Domestica 5 lobos"
+    type: "mob_tame"
+    target: "WOLF"
+    count: 5
+
+  ironman:
+    name: "Hombre de Hierro"
+    description: "Crea una armadura completa de hierro"
+    type: "crafting"
+    target: "IRON_ARMOR"
+    count: 4
+
+  farmer_king:
+    name: "Rey de los Cultivos"
+    description: "Cosecha 1,000 cultivos"
+    type: "block_break"
+    target: "WHEAT"
+    count: 1000
+
+  archer:
+    name: "Arquero Experto"
+    description: "Dispara 200 flechas"
+    type: "shoot_arrow"
+    target: "ARROW"
+    count: 200
+
+  sea_explorer:
+    name: "Explorador del Mar"
+    description: "Nada 2,000 bloques en el océano"
+    type: "swim_distance"
+    target: "ocean"
+    count: 2000
+
+  pig_rider:
+    name: "Jinete de Cerdos"
+    description: "Monta un cerdo durante 500 bloques"
+    type: "ride_distance"
+    target: "PIG"
+    count: 500
+
+  village_savior:
+    name: "Salvador de la Aldea"
+    description: "Defiende una aldea de un asalto de saqueadores"
+    type: "raid_defense"
+    target: "RAID"
+    count: 1
+
+  tree_cutter:
+    name: "Corta Árboles"
+    description: "Corta 100 árboles"
+    type: "block_break"
+    target: "SPRUCE_LOG"
+    count: 100
+
+  mob_slayer:
+    name: "Cazador de Monstruos"
+    description: "Mata 50 mobs"
+    type: "mob_kill"
+    target: "ZOMBIE"
+    count: 50
+
+  stone_miner:
+    name: "Minero de Piedra"
+    description: "Mina 500 bloques de piedra"
+    type: "block_break"
+    target: "STONE"
+    count: 500
+
+  explorer:
+    name: "Explorador"
+    description: "Camina 10,000 bloques"
+    type: "walk_distance"
+    target: "distance"
+    count: 10000  # 10,000 bloques
+
+  fisherman:
+    name: "Pescador Experto"
+    description: "Pesca 30 peces"
+    type: "fishing"
+    target: "fish"
+    count: 30
+
+  iron_collector:
+    name: "Recolector de Hierro"
+    description: "Mina 100 minerales de hierro"
+    type: "block_break"
+    target: "IRON_ORE"
+    count: 100
+
+  farmer:
+    name: "Granjero"
+    description: "Cultiva 200 cultivos"
+    type: "block_place"
+    target: "WHEAT_SEEDS"
+    count: 200
+
+  builder:
+    name: "Constructor"
+    description: "Coloca 500 bloques de piedra"
+    type: "block_place"
+    target: "STONE_BRICKS"
+    count: 500
+
+  creeper_slayer:
+    name: "Destructor de Creepers"
+    description: "Mata 20 creepers"
+    type: "mob_kill"
+    target: "CREEPER"
+    count: 20
+
+  dragon_slayer:
+    name: "Asesino de Dragones"
+    description: "Mata al Dragón del End"
+    type: "mob_kill"
+    target: "ENDER_DRAGON"
+    count: 1
+
+  treasure_hunter:
+    name: "Cazador de Tesoros"
+    description: "Encuentra 5 cofres del tesoro"
+    type: "block_break"
+    target: "CHEST"
+    count: 5
+
+  dirt_digger:
+    name: "Excavador de Tierra"
+    description: "Cava 100 bloques de tierra"
+    type: "block_break"
+    target: "DIRT"
+    count: 100

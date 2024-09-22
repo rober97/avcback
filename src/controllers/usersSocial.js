@@ -1,7 +1,45 @@
 const User = require('../models/userSocial')
 const Post = require('../models/postModel')
 const bcrypt = require("bcryptjs");
+const Achievement = require('../models/achievement');
+const yaml = require('js-yaml');
+const fs = require('fs');
+const path = require('path');
 //const minecraftSocket = require('../controllers/minecraft')
+
+const { v4: uuidv4 } = require('uuid');
+const { title } = require('process');
+
+const generarTokenVinculacion = () => {
+    return uuidv4();  // Genera un token UUID único
+}
+
+const guardarTokenEnUsuario = async (usuarioId, token) => {
+    await User.findByIdAndUpdate(usuarioId, { tokenVinculacion: token });
+}
+
+const generarToken = async (req, res) => {
+    const usuarioId = req.body.usuarioId;  // ID del usuario
+    const token = generarTokenVinculacion(usuarioId);
+    await guardarTokenEnUsuario(usuarioId, token);
+    res.json({ token });
+}
+
+const verifyToken = async (req, res) => {
+    const token = req.body.token;
+
+    // Encuentra al usuario con este token
+    const user = await User.findOne({ tokenVinculacion: token });
+
+    if (user) {
+        // El token es válido, marca al usuario como vinculado y borra el token
+        user.tokenVinculacion = null;  // Elimina el token
+        await user.save();
+        res.json({ success: true, message: 'Token válido, cuenta vinculada.' });
+    } else {
+        res.status(400).json({ success: false, message: 'Token inválido.' });
+    }
+}
 
 const newUser = async (req, res) => {
     try {
@@ -106,12 +144,10 @@ const loginUser = async (req, res) => {
 const getUserById = async (req, res) => {
     try {
         let data = req.body;
-        console.log('DATA: ', data)
         if (data.id) {
             const user_search = await User.findOne({
                 _id: data.id
             })
-            console.log('USER FOUND: ', user_search)
             res.json({ success: true, user: user_search })
         }
         else {
@@ -220,6 +256,167 @@ const getUsersPaginated = async (req, res) => {
     }
 };
 
+const linkAccount = async (req, res) => {
+    const { token, uuid, username } = req.body;
+
+    try {
+        // Buscar al usuario por el token (deberías tener una forma de validar el token en tu sistema)
+        const user = await User.findOne({ minecraftToken: token });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Token inválido o usuario no encontrado.' });
+        }
+
+        // Actualizar el UUID de Minecraft y el nombre de usuario de Minecraft en la cuenta del usuario
+        user.minecraftUUID = uuid;
+        user.minecraftUsername = username;  // Almacena el nombre de usuario de Minecraft
+        user.minecraftToken = null;  // Una vez usado el token, se puede limpiar
+        await user.save();
+
+        return res.status(200).json({ message: 'Cuenta vinculada exitosamente.' });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al vincular la cuenta.' });
+    }
+};
+
+
+const storeMinecraftToken = async (req, res) => {
+    const { username, token } = req.body;
+
+    try {
+        // Buscar al usuario por su nombre de usuario de Minecraft
+        const user = await User.findOne({ username });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Usuario no encontrado.' });
+        }
+
+        // Almacenar el token temporalmente en la cuenta del usuario
+        user.minecraftToken = token;
+        await user.save();
+
+        return res.status(200).json({ message: 'Token almacenado exitosamente.' });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al almacenar el token.' });
+    }
+};
+
+
+const generateToken = async (req, res) => {
+    const { userId } = req.body;
+
+    try {
+        // Buscar al usuario por su ID
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' });
+        }
+
+        // Verificar si la cuenta ya está vinculada a Minecraft
+        if (user.minecraftUUID) {
+            return res.status(200).json({
+                message: 'La cuenta ya está vinculada a Minecraft.',
+                success: false,
+                user: {
+                    username: user.username,
+                    mail: user.mail,
+                    minecraftUUID: user.minecraftUUID,
+                    minecraftUsername: user.minecraftUsername
+                }
+            });
+        }
+
+        // Si la cuenta no está vinculada, generar un nuevo token
+        const token = Math.random().toString(36).substring(2, 10); // Generar token aleatorio
+
+        // Guardar el token en la cuenta del usuario
+        user.minecraftToken = token;
+        await user.save();
+
+        return res.status(200).json({
+            message: 'Token generado exitosamente.',
+            success: true,
+            token
+        });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al generar el token.' });
+    }
+};
+
+
+const linkMinecraftAccount = async (req, res) => {
+    const { token, uuid } = req.body;
+
+    try {
+        // Buscar al usuario por el token
+        const user = await User.findOne({ minecraftToken: token });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Token inválido o usuario no encontrado.' });
+        }
+
+        // Vincular el UUID de Minecraft con la cuenta web del usuario
+        user.minecraftUUID = uuid;
+        user.minecraftToken = null; // Eliminar el token después de la vinculación
+        await user.save();
+
+        return res.status(200).json({ message: 'Cuenta vinculada exitosamente.' });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al vincular la cuenta.' });
+    }
+};
+const getAchievementsByUser = async (req, res) => {
+    const { uuid } = req.params;
+
+    try {
+        // Buscar los logros del jugador en la base de datos
+        const playerAchievements = await Achievement.find({ uuid });
+
+        // Cargar todos los logros desde el archivo YAML
+        const filePath = path.join(__dirname, 'achievements/data.yml');
+        const achievementsFile = fs.readFileSync(filePath, 'utf8');
+        const allAchievements = yaml.load(achievementsFile).achievements;
+
+        // Comparar y vincular los logros del jugador con los logros cargados
+        const playerAchievementsData = playerAchievements.map(pa => {
+            const matchingAchievement = allAchievements[pa.title];
+            return {
+                name: matchingAchievement.name,
+                description: matchingAchievement.description,
+                progress: pa.progress,
+                count: matchingAchievement.count,
+                completed: pa.progress >= matchingAchievement.count,
+                title: pa.title
+            };
+        });
+
+        return res.status(200).json({ playerAchievements: playerAchievementsData });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al obtener los logros del usuario.', error });
+    }
+};
+
+const getAllAchievements = async (req, res) => {
+    try {
+        const filePath = path.join(__dirname, 'achievements/data.yml');
+        const achievementsFile = fs.readFileSync(filePath, 'utf8');
+        const achievements = yaml.load(achievementsFile);
+        
+        return res.status(200).json({ achievements });
+    } catch (error) {
+        return res.status(500).json({ message: 'Error al cargar los logros.', error });
+    }
+};
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,5 +428,13 @@ module.exports = {
     listPostByUser,
     getUsersPaginated,
     unfollowUser,
-    followUser
+    followUser,
+    linkAccount,
+    generarToken,
+    verifyToken,
+    storeMinecraftToken,
+    generateToken,
+    linkMinecraftAccount,
+    getAchievementsByUser,
+    getAllAchievements
 }
