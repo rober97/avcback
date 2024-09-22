@@ -9,14 +9,16 @@ const app = express();
 const { Server } = require('socket.io');
 const http = require('http');
 const server = http.createServer(app);
+//"https://avc-1dbca99a8369.herokuapp.com:9000"
 const io = new Server(server, {
     cors: {
-        origin: "https://avc-1dbca99a8369.herokuapp.com:9000",  // <- la dirección de tu cliente
-        methods: ["GET", "POST"],
-        allowedHeaders: ["my-custom-header"],
-        credentials: true
+        origin: "https://avclatin.com",  // <- Solo permite solicitudes desde este dominio
+        methods: ["GET", "POST"],        // Los métodos HTTP permitidos
+        allowedHeaders: ["my-custom-header"], // Los headers permitidos
+        credentials: true                // Solo si manejas autenticación o cookies
     }
 });
+
 io.on('connection', (socket) => {
     console.log('a user connected');
     // Unir al usuario a una sala específica
