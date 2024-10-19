@@ -278,6 +278,41 @@ const listPostByUser = async (req, res) => {
   }
 };
 
+const searchUsersPaginated = async (req, res) => {
+  let { page, limit, query } = req.query;
+  page = parseInt(page, 10);
+  limit = parseInt(limit, 10);
+
+  if (isNaN(page) || page <= 0) {
+    return res.status(400).json({ error: "'page' must be a positive integer" });
+  }
+
+  if (isNaN(limit) || limit <= 0) {
+    return res
+      .status(400)
+      .json({ error: "'limit' must be a positive integer" });
+  }
+
+  try {
+    let searchCondition = {};
+    if (query && query.trim() !== "") {
+      searchCondition = { username: { $regex: query, $options: "i" } };
+    }
+
+    const users = await User.find(searchCondition)
+      .limit(limit)
+      .skip(limit * (page - 1))
+      .exec();
+
+    res.json(users);
+  } catch (error) {
+    // Manejar cualquier error que pueda ocurrir durante la búsqueda
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+
 const getUsersPaginated = async (req, res) => {
   // Extraer parámetros de la consulta
   let { page, limit } = req.query;
@@ -488,5 +523,6 @@ module.exports = {
   getAchievementsByUser,
   getAllAchievements,
   getUUIDUser,
-  getUserByUUID
+  getUserByUUID,
+  searchUsersPaginated
 };

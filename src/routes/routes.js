@@ -128,6 +128,9 @@ router.get("/get-list-users", (req, res) =>
   userSocial.getUsersPaginated(req, res)
 );
 
+router.get('/search-users', (req, res) => userSocial.searchUsersPaginated(req, res));
+
+
 router.post("/create-message", (req, res) => message.newMessage(req, res));
 router.get("/messages-between/:currentUser/:targetUser", (req, res) =>
   message.getSentMessagesBetweenUsers(req, res)
@@ -143,6 +146,8 @@ router.get("/list-post", (req, res) => post.listPost(req, res));
 router.get("/list-post-by-user", (req, res) =>
   userSocial.listPostByUser(req, res)
 );
+
+router.delete("/delete-post", (req, res) => post.deletePost(req, res));
 
 router.post("/follow", (req, res) => userSocial.followUser(req, res));
 router.post("/unfollow", (req, res) => userSocial.unfollowUser(req, res));
@@ -190,4 +195,16 @@ router.post("/create-market", (req, res) =>
 
 router.get("/all-cities", (req, res) => cityController.listAllCities(req, res));
 router.post("/create-city", (req, res) => cityController.createCity(req, res));
+
+
+
+
+router.post('/logout', (req, res) => {
+  //const token = req.headers.authorization.split(" ")[1]; // Obtenemos el token del encabezado Authorization
+  //console.log('TOKEN: ', token)
+  // Aquí podrías agregar lógica para invalidar el token
+  // Si usas JWT, podrías guardar una lista de tokens revocados, etc.
+  
+  res.status(200).json({ success: true, message: "Sesión cerrada exitosamente." });
+});
 module.exports = router;

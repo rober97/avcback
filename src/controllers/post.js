@@ -68,6 +68,34 @@ const newPost = async (req, res) => {
         return res.json({ message: "Error interno del servidor.", success: false });
     }
 }
+
+const deletePost = async (req, res) => {
+    try {
+        // Obtener el ID del post desde los parámetros o el cuerpo de la solicitud
+        const { postId } = req.body; // Si estás enviando el postId en el cuerpo de la solicitud
+        // const { postId } = req.params; // Alternativamente, si lo envías en los parámetros de la URL
+
+        // Verificar que se envió el postId
+        if (!postId) {
+            return res.status(400).json({ message: "Falta el ID del post.", success: false });
+        }
+
+        // Intentar eliminar el post
+        const deletedPost = await Post.findByIdAndDelete(postId);
+
+        // Si no se encontró el post, devolvemos un mensaje
+        if (!deletedPost) {
+            return res.status(404).json({ message: "El post no fue encontrado.", success: false });
+        }
+
+        return res.json({ message: "Post eliminado correctamente.", success: true });
+
+    } catch (error) {
+        console.error("Error al eliminar el post: ", error);
+        return res.status(500).json({ message: "Error interno del servidor.", success: false });
+    }
+};
+
 const updatePost = async (req, res) => {
     try {
         // Validar los datos del cuerpo de la solicitud
@@ -213,23 +241,6 @@ module.exports = {
     updatePost,
     listPost,
     updateLikes,
-    addComment
+    addComment,
+    deletePost
 };
-
-
-
-
-
-
-
-
-
-
-module.exports = {
-    newPost,
-    listPost,
-    uploadImage,
-    updatePost,
-    updateLikes,
-    addComment
-}
