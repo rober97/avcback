@@ -102,7 +102,7 @@ router.post("/delete-user", (req, res) => user.deleteUser(req, res));
 //router.post("/update-user", (req, res) => user.updateUser(req, res, NAME_FILE))
 //GET
 router.get("/list-user", (req, res) => user.listUser(req, res));
-router.get("/rewards", (req, res) => rewards.getRewardsList(req, res));
+router.post("/rewards", (req, res) => rewards.getRewardsList(req, res));
 router.post("/rewards/claim", (req, res) => rewards.claimReward(req, res));
 
 //FILES
