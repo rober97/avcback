@@ -41,6 +41,7 @@ const userSocialSchema = new Schema({
     }],
 
     minecraftUUID: String,
+    minecraftRank: String,
     minecraftToken: String,
     minecraftUsername: String,  // Nuevo campo para almacenar el nombre de usuario de Minecraft
 });

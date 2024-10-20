@@ -436,7 +436,7 @@ const generateToken = async (req, res) => {
 };
 
 const linkMinecraftAccount = async (req, res) => {
-  const { token, uuid } = req.body;
+  const { token, uuid, rank } = req.body;
 
   try {
     // Buscar al usuario por el token
@@ -450,6 +450,7 @@ const linkMinecraftAccount = async (req, res) => {
 
     // Vincular el UUID de Minecraft con la cuenta web del usuario
     user.minecraftUUID = uuid;
+    user.minecraftRank = rank || 'none';
     user.minecraftToken = null; // Eliminar el token después de la vinculación
     await user.save();
 
