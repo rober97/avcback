@@ -125,14 +125,14 @@ const claimReward = async (req, res) => {
       reward.command.forEach(cmd => {
         // Dividir los comandos por ';' si están concatenados
         const commands = cmd.split(';').map(c => c.trim()); // Elimina espacios en blanco innecesarios
-      
+
         commands.forEach(singleCommand => {
           // Reemplazar {player} por el nombre de usuario de Minecraft
           const finalCommand = singleCommand
             .replace('{player}', minecraftUsername)
             .replace('<player>', minecraftUsername)
             .replaceAll('/', ''); // Si necesitas eliminar '/', asegúrate de que es correcto
-      
+
           // Enviar el comando al servidor de Minecraft
           if (minecraftSocket && minecraftSocket.writable) {
             minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
@@ -143,7 +143,12 @@ const claimReward = async (req, res) => {
           }
         });
       });
-      
+
+      // Enviar un comando de broadcast al final
+      const broadcastCommand = `broadcast ${minecraftUsername} ha reclamado la recompensa: ${reward.name}!`;
+      minecraftSocket.write(broadcastCommand + '\n');
+      console.log(`Comando de broadcast enviado: ${broadcastCommand}`);
+
     } else {
       return res.json({ success: false, message: 'Nombre de usuario de Minecraft no vinculado' });
     }
@@ -159,6 +164,7 @@ const claimReward = async (req, res) => {
     res.json({ success: false, message: 'Error al reclamar la recompensa' });
   }
 };
+
 
 
 module.exports = {
