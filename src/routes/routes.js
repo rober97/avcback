@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const user = require("../controllers/users");
+const rewards = require("../controllers/rewards");
 const message = require("../controllers/message");
 const chat = require("../controllers/chatSocial");
 const userSocial = require("../controllers/usersSocial");
@@ -101,6 +102,8 @@ router.post("/delete-user", (req, res) => user.deleteUser(req, res));
 //router.post("/update-user", (req, res) => user.updateUser(req, res, NAME_FILE))
 //GET
 router.get("/list-user", (req, res) => user.listUser(req, res));
+router.get("/rewards", (req, res) => rewards.getRewardsList(req, res));
+router.post("/rewards/claim", (req, res) => rewards.claimReward(req, res));
 
 //FILES
 router.get("/downloadFile", (req, res) => file.downloadFile(req, res));

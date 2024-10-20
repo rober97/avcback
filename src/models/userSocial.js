@@ -35,7 +35,11 @@ const userSocialSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
     }],
-    
+    rewardsClaimed: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Reward'
+    }],
+
     minecraftUUID: String,
     minecraftToken: String,
     minecraftUsername: String,  // Nuevo campo para almacenar el nombre de usuario de Minecraft

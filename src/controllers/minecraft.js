@@ -1,6 +1,6 @@
 const net = require('net');
 
-const MINECRAFT_SERVER_HOST = '104.128.70.147';  // La dirección IP de tu servidor de Minecraft
+const MINECRAFT_SERVER_HOST = '209.192.187.106';  // La dirección IP de tu servidor de Minecraft
 const MINECRAFT_SERVER_PORT = 8029;  // Asegúrate de cambiar esto al puerto que esté escuchando tu plugin de Spigot
 
 const clientSocket = new net.Socket();

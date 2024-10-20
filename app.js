@@ -2,6 +2,8 @@ console.clear();
 require("dotenv").config();
 const express = require('express')
 const player = require('./src/controllers/player.js');
+
+const reward = require('./src/controllers/rewards.js');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -93,6 +95,8 @@ server.listen(port, () => {
     console.log('Servidor levantado en el puerto: ' + port)
 })
 
+
+//reward.createRewardsFromJson()
 
 
 
