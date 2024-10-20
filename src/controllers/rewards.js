@@ -124,7 +124,7 @@ const claimReward = async (req, res) => {
     if (minecraftUsername) {
       reward.command.forEach(cmd => {
         // Reemplazar {player} por el nombre de usuario de Minecraft
-        const finalCommand = cmd.replace('{player}', minecraftUsername).replace('<player>', minecraftUsername);
+        const finalCommand = cmd.replace('{player}', minecraftUsername).replace('<player>', minecraftUsername).replace('/', '');
 
         // Enviar el comando al servidor de Minecraft
         minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
