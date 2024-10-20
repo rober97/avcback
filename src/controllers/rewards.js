@@ -123,18 +123,27 @@ const claimReward = async (req, res) => {
 
     if (minecraftUsername) {
       reward.command.forEach(cmd => {
-        // Reemplazar {player} por el nombre de usuario de Minecraft
-        const finalCommand = cmd.replace('{player}', minecraftUsername).replace('<player>', minecraftUsername).replace('/', '');
-
-        // Enviar el comando al servidor de Minecraft
-        if (minecraftSocket && minecraftSocket.writable) {
-          minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
-          console.log(`Comando enviado: ${finalCommand}`);
-        } else {
-          console.log('No se pudo enviar el comando. El socket no está conectado.');
-          return res.json({ success: false, message: 'Error en la conexión al servidor de Minecraft' });
-        }
+        // Dividir los comandos por ';' si están concatenados
+        const commands = cmd.split(';').map(c => c.trim()); // Elimina espacios en blanco innecesarios
+      
+        commands.forEach(singleCommand => {
+          // Reemplazar {player} por el nombre de usuario de Minecraft
+          const finalCommand = singleCommand
+            .replace('{player}', minecraftUsername)
+            .replace('<player>', minecraftUsername)
+            .replaceAll('/', ''); // Si necesitas eliminar '/', asegúrate de que es correcto
+      
+          // Enviar el comando al servidor de Minecraft
+          if (minecraftSocket && minecraftSocket.writable) {
+            minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
+            console.log(`Comando enviado: ${finalCommand}`);
+          } else {
+            console.log('No se pudo enviar el comando. El socket no está conectado.');
+            return res.json({ success: false, message: 'Error en la conexión al servidor de Minecraft' });
+          }
+        });
       });
+      
     } else {
       return res.json({ success: false, message: 'Nombre de usuario de Minecraft no vinculado' });
     }
