@@ -66,6 +66,19 @@ const createRewardsFromJson = async () => {
 
 const getRewardsList = async (req, res) => {
   try {
+    const { userId } = req.body; // Asegúrate de que el userId se envía en el cuerpo de la solicitud
+
+    // Verificar si el userId es un ObjectId válido
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ success: false, message: 'ID de usuario no válido' });
+    }
+
+    // Buscar al usuario en la base de datos y cargar sus recompensas reclamadas
+    const user = await User.findById(userId).populate('rewardsClaimed');
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+    }
+
     // Obtener todas las recompensas de la base de datos
     const rewards = await Reward.find();
 
@@ -73,11 +86,22 @@ const getRewardsList = async (req, res) => {
     const aventura_rewards = rewards.filter(reward => reward.category === 'aventura');
     const premium_rewards = rewards.filter(reward => reward.category === 'premium');
 
-    // Enviar la respuesta con las recompensas agrupadas
+    // Marcar las recompensas que ya han sido reclamadas
+    const markedAventuraRewards = aventura_rewards.map(reward => ({
+      ...reward.toObject(),
+      claimed: user.rewardsClaimed.some(claimed => claimed.equals(reward._id))
+    }));
+
+    const markedPremiumRewards = premium_rewards.map(reward => ({
+      ...reward.toObject(),
+      claimed: user.rewardsClaimed.some(claimed => claimed.equals(reward._id))
+    }));
+
+    // Enviar la respuesta con las recompensas agrupadas y marcadas
     res.json({
       success: true,
-      aventura_rewards,
-      premium_rewards
+      aventura_rewards: markedAventuraRewards,
+      premium_rewards: markedPremiumRewards
     });
   } catch (error) {
     console.error("Error al obtener las recompensas:", error);
@@ -87,6 +111,7 @@ const getRewardsList = async (req, res) => {
     });
   }
 };
+
 
 
 const claimReward = async (req, res) => {
