@@ -34,7 +34,6 @@ io.on('connection', (socket) => {
 
     // Escuchar mensajes y reenviarlos a la misma sala
     socket.on('send_message', ({ roomId, message }) => {
-        console.log("SE EMITE EVENTOOOOO PARA ENVIAR MENSAJEEEEEEEEE")
         message.sender = 'received'
         socket.to(roomId).emit('receive_message', message);
     });
@@ -42,6 +41,15 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
+    // Escuchar cuando una cuenta ha sido vinculada y emitir "update_page"
+    socket.on('account_linked', ({ token, uuid }) => {
+        console.log(`Account linked for UUID: ${uuid} and Token: ${token}`);
+
+        // Emitir el evento para actualizar la página
+        socket.emit("update_page", JSON.stringify({ token, uuid }));
+    });
+
 });
 
 // parse application/x-www-form-urlencoded
