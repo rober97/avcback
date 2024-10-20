@@ -127,8 +127,13 @@ const claimReward = async (req, res) => {
         const finalCommand = cmd.replace('{player}', minecraftUsername).replace('<player>', minecraftUsername).replace('/', '');
 
         // Enviar el comando al servidor de Minecraft
-        minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
-        console.log(`Comando enviado: ${finalCommand}`);
+        if (minecraftSocket && minecraftSocket.writable) {
+          minecraftSocket.write(finalCommand + '\n'); // Asegúrate de que el comando termine con '\n' para enviar
+          console.log(`Comando enviado: ${finalCommand}`);
+        } else {
+          console.log('No se pudo enviar el comando. El socket no está conectado.');
+          return res.json({ success: false, message: 'Error en la conexión al servidor de Minecraft' });
+        }
       });
     } else {
       return res.json({ success: false, message: 'Nombre de usuario de Minecraft no vinculado' });
@@ -145,6 +150,7 @@ const claimReward = async (req, res) => {
     res.json({ success: false, message: 'Error al reclamar la recompensa' });
   }
 };
+
 
 module.exports = {
   createRewardsFromJson,
