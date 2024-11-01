@@ -11,6 +11,10 @@ const rewardSchema = new Schema({
         type: String,
         required: true,
     },
+    long_description: {
+        type: String,
+        required: true,
+    },
     points_required: {
         type: Number,
         required: true,

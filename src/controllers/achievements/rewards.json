@@ -1,600 +1,690 @@
 {
-    "aventura_rewards": [
-      {
-        "id": 1,
-        "name": "Poción de Salud",
-        "description": "Restaura salud al instante",
-        "points_required": 50,
-        "command": "/give <player> minecraft:potion{Potion:\"minecraft:healing\"} 1"
-      },
-      {
-        "id": 2,
-        "name": "Espada de Hierro",
-        "description": "Espada afilada para el combate",
-        "points_required": 100,
-        "command": "/give <player> minecraft:iron_sword 1"
-      },
-      {
-        "id": 3,
-        "name": "Armadura de Cuero Completa",
-        "description": "Protección básica contra ataques",
-        "points_required": 200,
-        "command": "/give <player> minecraft:leather_helmet 1; /give <player> minecraft:leather_chestplate 1; /give <player> minecraft:leather_leggings 1; /give <player> minecraft:leather_boots 1"
-      },
-      {
-        "id": 4,
-        "name": "50 Bloques de Madera",
-        "description": "Útil para construir refugios",
-        "points_required": 300,
-        "command": "/give <player> minecraft:oak_planks 50"
-      },
-      {
-        "id": 5,
-        "name": "50 Bloques de Piedra",
-        "description": "Material de construcción resistente",
-        "points_required": 400,
-        "command": "/give <player> minecraft:stone 50"
-      },
-      {
-        "id": 6,
-        "name": "10 Manzanas Doradas",
-        "description": "Manzanas que restauran salud adicional",
-        "points_required": 500,
-        "command": "/give <player> minecraft:golden_apple 10"
-      },
-      {
-        "id": 7,
-        "name": "Arco con Encantamiento de Poder",
-        "description": "Arco mejorado con encantamientos",
-        "points_required": 650,
-        "command": "/give <player> minecraft:bow{Enchantments:[{id:\"minecraft:power\",lvl:3}]} 1"
-      },
-      {
-        "id": 8,
-        "name": "50 Flechas",
-        "description": "Munición para el arco encantado",
-        "points_required": 800,
-        "command": "/give <player> minecraft:arrow 50"
-      },
-      {
-        "id": 9,
-        "name": "Armadura de Hierro Completa",
-        "description": "Protección avanzada contra ataques",
-        "points_required": 1000,
-        "command": "/give <player> minecraft:iron_helmet 1; /give <player> minecraft:iron_chestplate 1; /give <player> minecraft:iron_leggings 1; /give <player> minecraft:iron_boots 1"
-      },
-      {
-        "id": 10,
-        "name": "Espada de Diamante",
-        "description": "Espada poderosa de diamante",
-        "points_required": 1200,
-        "command": "/give <player> minecraft:diamond_sword 1"
-      },
-      {
-        "id": 11,
-        "name": "Escudo de Hierro",
-        "description": "Protección adicional contra ataques",
-        "points_required": 1300,
-        "command": "/give <player> minecraft:shield 1"
-      },
-      {
-        "id": 12,
-        "name": "100 Bloques de Piedra",
-        "description": "Material adicional para grandes construcciones",
-        "points_required": 1500,
-        "command": "/give <player> minecraft:stone 100"
-      },
-      {
-        "id": 13,
-        "name": "Poción de Fuerza",
-        "description": "Aumenta el daño temporalmente",
-        "points_required": 1800,
-        "command": "/give <player> minecraft:potion{Potion:\"minecraft:strength\"} 1"
-      },
-      {
-        "id": 14,
-        "name": "Casco de Diamante",
-        "description": "Protección avanzada para la cabeza",
-        "points_required": 2000,
-        "command": "/give <player> minecraft:diamond_helmet 1"
-      },
-      {
-        "id": 15,
-        "name": "Espada de Oro con Filo",
-        "description": "Espada rápida pero delicada",
-        "points_required": 2200,
-        "command": "/give <player> minecraft:golden_sword{Enchantments:[{id:\"minecraft:sharpness\",lvl:3}]} 1"
-      },
-      {
-        "id": 16,
-        "name": "Botas con Encantamiento de Caída Lenta",
-        "description": "Botas que reducen el daño por caídas",
-        "points_required": 2500,
-        "command": "/give <player> minecraft:leather_boots{Enchantments:[{id:\"minecraft:feather_falling\",lvl:4}]} 1"
-      },
-      {
-        "id": 17,
-        "name": "Pico de Hierro Encantado",
-        "description": "Herramienta resistente para minería",
-        "points_required": 2800,
-        "command": "/give <player> minecraft:iron_pickaxe{Enchantments:[{id:\"minecraft:unbreaking\",lvl:3}]} 1"
-      },
-      {
-        "id": 18,
-        "name": "Escudo de Diamante",
-        "description": "Máxima protección contra ataques",
-        "points_required": 3000,
-        "command": "/give <player> minecraft:shield 1"
-      },
-      {
-        "id": 19,
-        "name": "Tótem de Inmortalidad",
-        "description": "Te salva de la muerte una vez",
-        "points_required": 3500,
-        "command": "/give <player> minecraft:totem_of_undying 1"
-      },
-      {
-        "id": 20,
-        "name": "Varita de Fuego",
-        "description": "Ataques a distancia con fuego",
-        "points_required": 4000,
-        "command": "/give <player> minecraft:blaze_rod 1"
-      },
-      {
-        "id": 21,
-        "name": "Cofre del Tesoro",
-        "description": "Un cofre lleno de sorpresas",
-        "points_required": 4500,
-        "command": "/give {player} minecraft:chest 1"
-      },
-      {
-        "id": 22,
-        "name": "Guantes de Minería",
-        "description": "Aumenta la velocidad al minar",
-        "points_required": 4800,
-        "command": "/give {player} minecraft:diamond_pickaxe 1 {Enchantments:[{id:\"efficiency\",lvl:5}]}"
-      },
-      {
-        "id": 23,
-        "name": "Hacha de Hierro Encantada",
-        "description": "Herramienta resistente para tala avanzada",
-        "points_required": 5000,
-        "command": "/give {player} minecraft:iron_axe 1 {Enchantments:[{id:\"efficiency\",lvl:4}]}"
-      },
-      {
-        "id": 24,
-        "name": "Set Completo de Diamante",
-        "description": "Armadura completa de diamante",
-        "points_required": 5500,
-        "command": "/give {player} minecraft:diamond_helmet 1; /give {player} minecraft:diamond_chestplate 1; /give {player} minecraft:diamond_leggings 1; /give {player} minecraft:diamond_boots 1"
-      },
-      {
-        "id": 25,
-        "name": "Espada Legendaria",
-        "description": "Espada con encantamientos épicos",
-        "points_required": 6000,
-        "command": "/give {player} minecraft:diamond_sword 1 {Enchantments:[{id:\"sharpness\",lvl:5},{id:\"unbreaking\",lvl:3}]}"
-      },
-      {
-        "id": 26,
-        "name": "Escudo de Defensa",
-        "description": "Escudo con encantamiento de durabilidad",
-        "points_required": 6500,
-        "command": "/give {player} minecraft:shield 1 {Enchantments:[{id:\"unbreaking\",lvl:3}]}"
-      },
-      {
-        "id": 27,
-        "name": "Pico de Netherite",
-        "description": "La herramienta definitiva para minería avanzada",
-        "points_required": 7000,
-        "command": "/give {player} minecraft:netherite_pickaxe 1"
-      },
-      {
-        "id": 28,
-        "name": "Espada de Fuego",
-        "description": "Espada con daño de fuego adicional",
-        "points_required": 7500,
-        "command": "/give {player} minecraft:diamond_sword 1 {Enchantments:[{id:\"fire_aspect\",lvl:2}]}"
-      },
-      {
-        "id": 29,
-        "name": "Capa de Invisibilidad",
-        "description": "Permite ocultarte por un tiempo limitado",
-        "points_required": 8000,
-        "command": "/give {player} minecraft:potion 1 {Potion:\"minecraft:invisibility\"}"
-      },
-      {
-        "id": 30,
-        "name": "Elytra con Durabilidad",
-        "description": "Elytra para volar largas distancias",
-        "points_required": 8500,
-        "command": "/give {player} minecraft:elytra 1 {Enchantments:[{id:\"unbreaking\",lvl:3}]}"
-      },
-      {
-        "id": 31,
-        "name": "Acceso a Kit XI",
-        "description": "Desbloquea el acceso al kit de rango XI",
-        "points_required": 18000,
-        "command": ["/lp user <player> permission set playerkits.kit.xi true"]
-      },
-      {
-        "id": 32,
-        "name": "Acceso a Kit XII y Hogares Extra",
-        "description": "Desbloquea el acceso al kit XII y te permite tener 4 hogares",
-        "points_required": 20000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xii true",
-          "/lp user <player> permission set essentials.sethome.multiple.4 true"
-        ]
-      },
-      {
-        "id": 33,
-        "name": "Acceso a vender 4 ítems en la subasta",
-        "description": "Permite vender hasta 4 ítems simultáneamente en la subasta",
-        "points_required": 22000,
-        "command": ["/lp user <player> permission set auction.sell.4 true"]
-      },
-      {
-        "id": 34,
-        "name": "Acceso a Kit XIII y mochila 9x7",
-        "description": "Desbloquea el kit XIII y una mochila de 9x7 ranuras",
-        "points_required": 24000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xiii true",
-          "/lp user <player> permission set backpack.size.9x7 true"
-        ]
-      },
-      {
-        "id": 35,
-        "name": "Acceso a Kit XIV y Chunk Extra",
-        "description": "Desbloquea el kit XIV y la habilidad para reclamar un chunk extra",
-        "points_required": 26000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xiv true",
-          "/lp user <player> permission set towny.claim.chunk.1 true"
-        ]
-      },
-      {
-        "id": 36,
-        "name": "Acceso a /repair",
-        "description": "Desbloquea el comando /repair para reparar tus objetos",
-        "points_required": 28000,
-        "command": ["/lp user <player> permission set essentials.repair true"]
-      },
-      {
-        "id": 37,
-        "name": "Acceso a Kit XV y Hogares Extra",
-        "description": "Desbloquea el kit XV y te permite tener 5 hogares",
-        "points_required": 30000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xv true",
-          "/lp user <player> permission set essentials.sethome.multiple.5 true"
-        ]
-      },
-      {
-        "id": 38,
-        "name": "Acceso a vender 5 ítems en la subasta",
-        "description": "Permite vender hasta 5 ítems simultáneamente en la subasta",
-        "points_required": 32000,
-        "command": ["/lp user <player> permission set auction.sell.5 true"]
-      },
-      {
-        "id": 39,
-        "name": "Acceso a /anvil",
-        "description": "Desbloquea el comando /anvil para usar el yunque desde cualquier lugar",
-        "points_required": 35000,
-        "command": ["/lp user <player> permission set essentials.anvil true"]
-      },
-      {
-        "id": 40,
-        "name": "Acceso a Kit XVI y mochila 9x9",
-        "description": "Desbloquea el kit XVI y una mochila de 9x9 ranuras",
-        "points_required": 38000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xvi true",
-          "/lp user <player> permission set backpack.size.9x9 true"
-        ]
-      }
-    ],
-    "premium_rewards": [
-      {
-        "id": 1,
-        "name": "Poción de Velocidad",
-        "description": "Aumenta la velocidad de movimiento temporalmente",
-        "points_required": 100,
-        "command": "/give <player> minecraft:potion{Potion:\"minecraft:swiftness\"} 1"
-      },
-      {
-        "id": 2,
-        "name": "Espada de Hierro con Filo",
-        "description": "Espada mejorada con encantamientos de filo",
-        "points_required": 200,
-        "command": "/give <player> minecraft:iron_sword{Enchantments:[{id:\"minecraft:sharpness\",lvl:3}]} 1"
-      },
-      {
-        "id": 3,
-        "name": "50 Bloques de Madera Encantada",
-        "description": "Material de construcción especial",
-        "points_required": 350,
-        "command": "/give <player> minecraft:spruce_planks{Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]} 50"
-      },
-      {
-        "id": 4,
-        "name": "Armadura de Hierro con Protección",
-        "description": "Armadura de hierro mejorada",
-        "points_required": 500,
-        "command": "/give <player> minecraft:iron_helmet{Enchantments:[{id:\"minecraft:protection\",lvl:3}]} 1; /give <player> minecraft:iron_chestplate{Enchantments:[{id:\"minecraft:protection\",lvl:3}]} 1; /give <player> minecraft:iron_leggings{Enchantments:[{id:\"minecraft:protection\",lvl:3}]} 1; /give <player> minecraft:iron_boots{Enchantments:[{id:\"minecraft:protection\",lvl:3}]} 1"
-      },
-      {
-        "id": 5,
-        "name": "Espada de Diamante Encantada",
-        "description": "Espada de diamante con encantamientos",
-        "points_required": 700,
-        "command": "/give <player> minecraft:diamond_sword{Enchantments:[{id:\"minecraft:sharpness\",lvl:5}]} 1"
-      },
-      {
-        "id": 6,
-        "name": "Arco de Poder con Infinidad",
-        "description": "Arco encantado con poder y munición infinita",
-        "points_required": 900,
-        "command": "/give <player> minecraft:bow{Enchantments:[{id:\"minecraft:power\",lvl:5},{id:\"minecraft:infinity\",lvl:1}]} 1"
-      },
-      {
-        "id": 7,
-        "name": "10 Manzanas Encantadas",
-        "description": "Manzanas especiales con habilidades mágicas",
-        "points_required": 1200,
-        "command": "/give <player> minecraft:enchanted_golden_apple 10"
-      },
-      {
-        "id": 8,
-        "name": "Armadura de Diamante Completa",
-        "description": "Protección máxima con diamante",
-        "points_required": 1500,
-        "command": "/give <player> minecraft:diamond_helmet 1; /give <player> minecraft:diamond_chestplate 1; /give <player> minecraft:diamond_leggings 1; /give <player> minecraft:diamond_boots 1"
-      },
-      {
-        "id": 9,
-        "name": "Elytra con Encantamiento de Durabilidad",
-        "description": "Ala especial para volar grandes distancias",
-        "points_required": 1800,
-        "command": "/give <player> minecraft:elytra{Enchantments:[{id:\"minecraft:unbreaking\",lvl:3}]} 1"
-      },
-      {
-        "id": 10,
-        "name": "Espada Legendaria",
-        "description": "Espada legendaria con múltiples encantamientos",
-        "points_required": 2500,
-        "command": "/give <player> minecraft:diamond_sword{Enchantments:[{id:\"minecraft:sharpness\",lvl:5},{id:\"minecraft:fire_aspect\",lvl:2},{id:\"minecraft:looting\",lvl:3}]} 1"
-      },
-      {
-        "id": 11,
-        "name": "Pico de Diamante con Fortuna",
-        "description": "Aumenta la cantidad de materiales obtenidos",
-        "points_required": 1000,
-        "command": "/give <player> minecraft:diamond_pickaxe{Enchantments:[{id:\"minecraft:fortune\",lvl:3}]} 1"
-      },
-      {
-        "id": 12,
-        "name": "Casco de Oro Encantado",
-        "description": "Protección especial para la cabeza",
-        "points_required": 1200,
-        "command": "/give <player> minecraft:golden_helmet{Enchantments:[{id:\"minecraft:protection\",lvl:4}]} 1"
-      },
-      {
-        "id": 13,
-        "name": "Poción de Invisibilidad",
-        "description": "Permite ocultarte temporalmente",
-        "points_required": 1500,
-        "command": "/give <player> minecraft:potion{Potion:\"minecraft:invisibility\"} 1"
-      },
-      {
-        "id": 14,
-        "name": "Ballesta con Encantamiento Multidisparo",
-        "description": "Dispara múltiples flechas al mismo tiempo",
-        "points_required": 1800,
-        "command": "/give <player> minecraft:crossbow{Enchantments:[{id:\"minecraft:multishot\",lvl:1}]} 1"
-      },
-      {
-        "id": 15,
-        "name": "Túnica de Magia",
-        "description": "Armadura mágica para aumentar la resistencia",
-        "points_required": 2000,
-        "command": "/give <player> minecraft:leather_chestplate{Enchantments:[{id:\"minecraft:protection\",lvl:4}]} 1"
-      },
-      {
-        "id": 16,
-        "name": "Varita de Rayo",
-        "description": "Ataques a distancia con rayos",
-        "points_required": 2500,
-        "command": "/summon minecraft:lightning_bolt ~ ~ ~"
-      },
-      {
-        "id": 17,
-        "name": "Pico de Netherite",
-        "description": "Herramienta poderosa para minería avanzada",
-        "points_required": 3000,
-        "command": "/give <player> minecraft:netherite_pickaxe 1"
-      },
-      {
-        "id": 18,
-        "name": "Ala Elytra con Protección Mágica",
-        "description": "Ala mejorada para viajes largos",
-        "points_required": 3500,
-        "command": "/give <player> minecraft:elytra{Enchantments:[{id:\"minecraft:unbreaking\",lvl:3}]} 1"
-      },
-      {
-        "id": 19,
-        "name": "Montura para Caballo con Velocidad",
-        "description": "Mejora la velocidad de tu caballo",
-        "points_required": 4000,
-        "command": "/give <player> minecraft:saddle 1"
-      },
-      {
-        "id": 20,
-        "name": "Poder del Fénix",
-        "description": "Revive una vez después de morir",
-        "points_required": 5000,
-        "command": "/give <player> minecraft:totem_of_undying 1"
-      },
-      {
-        "id": 21,
-        "name": "Poción de Resistencia",
-        "description": "Aumenta tu resistencia temporalmente",
-        "points_required": 5500,
-        "command": "/give {player} minecraft:potion 1 {Potion:\"minecraft:resistance\"}"
-      },
-      {
-        "id": 22,
-        "name": "Armadura de Netherite Completa",
-        "description": "Máxima protección con netherite",
-        "points_required": 6000,
-        "command": "/give {player} minecraft:netherite_helmet 1; /give {player} minecraft:netherite_chestplate 1; /give {player} minecraft:netherite_leggings 1; /give {player} minecraft:netherite_boots 1"
-      },
-      {
-        "id": 23,
-        "name": "Espada de Netherite Encantada",
-        "description": "Espada poderosa con encantamientos",
-        "points_required": 6500,
-        "command": "/give {player} minecraft:netherite_sword 1 {Enchantments:[{id:\"sharpness\",lvl:5},{id:\"unbreaking\",lvl:3}]}"
-      },
-      {
-        "id": 24,
-        "name": "Varita de Teletransportación",
-        "description": "Permite teletransportarte a cualquier lugar",
-        "points_required": 7000,
-        "command": "/give {player} minecraft:ender_pearl 16"
-      },
-      {
-        "id": 25,
-        "name": "Escudo de Netherite",
-        "description": "Escudo mejorado con máxima durabilidad",
-        "points_required": 7500,
-        "command": "/give {player} minecraft:shield 1 {Enchantments:[{id:\"unbreaking\",lvl:3},{id:\"mending\",lvl:1}]}"
-      },
-      {
-        "id": 26,
-        "name": "Pico de Netherite con Fortuna III",
-        "description": "Aumenta la cantidad de materiales obtenidos",
-        "points_required": 8000,
-        "command": "/give {player} minecraft:netherite_pickaxe 1 {Enchantments:[{id:\"fortune\",lvl:3},{id:\"efficiency\",lvl:5}]}"
-      },
-      {
-        "id": 27,
-        "name": "Armadura de Oro Encantada",
-        "description": "Armadura mágica con encantamientos especiales",
-        "points_required": 8500,
-        "command": "/give {player} minecraft:golden_chestplate 1 {Enchantments:[{id:\"protection\",lvl:4},{id:\"unbreaking\",lvl:3}]}"
-      },
-      {
-        "id": 28,
-        "name": "Flechas Infinita",
-        "description": "Munición infinita para tus arcos",
-        "points_required": 9000,
-        "command": "/give {player} minecraft:bow 1 {Enchantments:[{id:\"infinity\",lvl:1},{id:\"power\",lvl:5}]}"
-      },
-      {
-        "id": 29,
-        "name": "Varita de Control del Clima",
-        "description": "Permite controlar el clima",
-        "points_required": 9500,
-        "command": "/weather clear"
-      },
-      {
-        "id": 30,
-        "name": "Rayo de Zeus",
-        "description": "Invoca un rayo poderoso donde te encuentres",
-        "points_required": 10000,
-        "command": "/execute {player} ~ ~ ~ summon minecraft:lightning_bolt"
-      },
-      {
-        "id": 31,
-        "name": "Acceso a Kit XI y Hogares Extra",
-        "description": "Desbloquea el kit XI y te permite tener 6 hogares",
-        "points_required": 20000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xi true",
-          "/lp user <player> permission set essentials.sethome.multiple.6 true"
-        ]
-      },
-      {
-        "id": 32,
-        "name": "Acceso a vender 6 ítems en la subasta",
-        "description": "Permite vender hasta 6 ítems simultáneamente en la subasta",
-        "points_required": 22000,
-        "command": ["/lp user <player> permission set auction.sell.6 true"]
-      },
-      {
-        "id": 33,
-        "name": "Acceso a Kit XII y Chunk Extra",
-        "description": "Desbloquea el kit XII y la habilidad para reclamar 2 chunks extra",
-        "points_required": 24000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xii true",
-          "/lp user <player> permission set towny.claim.chunk.2 true"
-        ]
-      },
-      {
-        "id": 34,
-        "name": "Acceso a Kit XIII y /fix all",
-        "description": "Desbloquea el kit XIII y el comando /fix all para reparar todos tus objetos",
-        "points_required": 26000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xiii true",
-          "/lp user <player> permission set essentials.fix.all true"
-        ]
-      },
-      {
-        "id": 35,
-        "name": "Acceso a vender 7 ítems en la subasta",
-        "description": "Permite vender hasta 7 ítems simultáneamente en la subasta",
-        "points_required": 28000,
-        "command": ["/lp user <player> permission set auction.sell.7 true"]
-      },
-      {
-        "id": 36,
-        "name": "Acceso a Kit XIV y Hogares Extra",
-        "description": "Desbloquea el kit XIV y te permite tener 7 hogares",
-        "points_required": 30000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xiv true",
-          "/lp user <player> permission set essentials.sethome.multiple.7 true"
-        ]
-      },
-      {
-        "id": 37,
-        "name": "Acceso a /god",
-        "description": "Desbloquea el comando /god para ser invulnerable temporalmente",
-        "points_required": 32000,
-        "command": ["/lp user <player> permission set essentials.god true"]
-      },
-      {
-        "id": 38,
-        "name": "Acceso a Kit XV y mochila 9x12",
-        "description": "Desbloquea el kit XV y una mochila de 9x12 ranuras",
-        "points_required": 35000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xv true",
-          "/lp user <player> permission set backpack.size.9x12 true"
-        ]
-      },
-      {
-        "id": 39,
-        "name": "Acceso a vender 8 ítems en la subasta",
-        "description": "Permite vender hasta 8 ítems simultáneamente en la subasta",
-        "points_required": 38000,
-        "command": ["/lp user <player> permission set auction.sell.8 true"]
-      },
-      {
-        "id": 40,
-        "name": "Acceso a Kit XVI y Elytra especial",
-        "description": "Desbloquea el kit XVI y una Elytra con encantamiento especial",
-        "points_required": 40000,
-        "command": [
-          "/lp user <player> permission set playerkits.kit.xvi true",
-          "/give <player> minecraft:elytra{Enchantments:[{id:unbreaking,lvl:3}]}"
-        ]
-      }
-    ]
-  }
-  
+  "aventura_rewards": [
+    {
+      "id": 1,
+      "name": "Poción de Salud",
+      "description": "Restaura salud al instante",
+      "long_description": "Esta poción mágica restaura una porción considerable de tu salud de inmediato, permitiéndote seguir adelante en tus aventuras sin tener que parar a recuperarte.",
+      "points_required": 100,
+      "command": "/give <player> potion 1 effect:healing power:1 duration:0"
+    },
+    {
+      "id": 2,
+      "name": "Espada de Hierro",
+      "description": "Espada afilada para el combate",
+      "long_description": "Una espada confiable hecha de hierro, ideal para tus primeros enfrentamientos. Con esta arma, tendrás un buen equilibrio entre poder y durabilidad.",
+      "points_required": 150,
+      "command": "/give <player> minecraft:iron_sword 1"
+    },
+    {
+      "id": 3,
+      "name": "Armadura de Cuero Completa",
+      "description": "Protección básica contra ataques",
+      "long_description": "Un conjunto de armadura ligera que te proporciona la protección básica necesaria para sobrevivir en tus primeros días de aventura.",
+      "points_required": 300,
+      "command": "/give <player> minecraft:leather_helmet 1; /give <player> minecraft:leather_chestplate 1; /give <player> minecraft:leather_leggings 1; /give <player> minecraft:leather_boots 1"
+    },
+    {
+      "id": 4,
+      "name": "50 Bloques de Madera",
+      "description": "Útil para construir refugios",
+      "long_description": "Material esencial para la construcción y supervivencia. Con 50 bloques de madera, podrás construir un refugio básico y protegerte de los peligros de la noche.",
+      "points_required": 400,
+      "command": "/give <player> minecraft:oak_planks 50"
+    },
+    {
+      "id": 5,
+      "name": "50 Bloques de Piedra",
+      "description": "Material de construcción resistente",
+      "long_description": "La piedra es un material más duradero que la madera y perfecto para construir estructuras resistentes o fortificaciones básicas.",
+      "points_required": 500,
+      "command": "/give <player> minecraft:stone 50"
+    },
+    {
+      "id": 6,
+      "name": "10 Manzanas Doradas",
+      "description": "Manzanas que restauran salud adicional",
+      "long_description": "Un suministro de manzanas doradas que no solo te restauran la salud sino que te otorgan beneficios adicionales, perfectas para enfrentamientos difíciles.",
+      "points_required": 700,
+      "command": "/give <player> minecraft:golden_apple 10"
+    },
+    {
+      "id": 7,
+      "name": "Arco con Encantamiento de Poder",
+      "description": "Arco mejorado con encantamientos",
+      "long_description": "Este arco ha sido mejorado con encantamientos que incrementan su poder, lo que te permite infligir más daño a distancia y mantener a raya a los enemigos.",
+      "points_required": 900,
+      "command": "/give <player> minecraft:bow 1 power:3"
+    },
+    {
+      "id": 8,
+      "name": "50 Flechas",
+      "description": "Munición para el arco encantado",
+      "long_description": "Un conjunto de flechas que te permitirá utilizar el arco encantado en combate. Es esencial para aquellos que prefieren atacar a distancia.",
+      "points_required": 1000,
+      "command": "/give <player> minecraft:arrow 50"
+    },
+    {
+      "id": 9,
+      "name": "Armadura de Hierro Completa",
+      "description": "Protección avanzada contra ataques",
+      "long_description": "Un conjunto completo de armadura de hierro, que te ofrece mayor protección y durabilidad en comparación con la armadura de cuero.",
+      "points_required": 1200,
+      "command": "/give <player> minecraft:iron_helmet 1; /give <player> minecraft:iron_chestplate 1; /give <player> minecraft:iron_leggings 1; /give <player> minecraft:iron_boots 1"
+    },
+    {
+      "id": 10,
+      "name": "Espada de Diamante",
+      "description": "Espada poderosa de diamante",
+      "long_description": "Una espada de gran valor y durabilidad. El diamante le otorga un filo excepcional, perfecto para quienes buscan enfrentar enemigos poderosos.",
+      "points_required": 1500,
+      "command": "/give <player> minecraft:diamond_sword 1"
+    },
+    {
+      "id": 11,
+      "name": "Escudo de Hierro",
+      "description": "Protección adicional contra ataques",
+      "long_description": "Un escudo de hierro resistente que te permitirá bloquear ataques, aumentando tu capacidad de defensa y reduciendo el daño recibido.",
+      "points_required": 1600,
+      "command": "/give <player> minecraft:shield 1"
+    },
+    {
+      "id": 12,
+      "name": "100 Bloques de Piedra",
+      "description": "Material adicional para grandes construcciones",
+      "long_description": "Con 100 bloques de piedra, podrás crear construcciones mucho más resistentes y duraderas, perfectas para bases o fortificaciones.",
+      "points_required": 1800,
+      "command": "/give <player> minecraft:stone 100"
+    },
+    {
+      "id": 13,
+      "name": "Poción de Fuerza",
+      "description": "Aumenta el daño temporalmente",
+      "long_description": "Esta poción aumenta temporalmente tu fuerza, permitiéndote causar mucho más daño en combate durante un tiempo limitado.",
+      "points_required": 2000,
+      "command": "/give <player> potion 1 effect:strength power:1 duration:180"
+    },
+    {
+      "id": 14,
+      "name": "Casco de Diamante",
+      "description": "Protección avanzada para la cabeza",
+      "long_description": "Un casco de diamante resistente, diseñado para proporcionar una excelente protección contra daños en combate.",
+      "points_required": 2200,
+      "command": "/give <player> minecraft:diamond_helmet 1"
+    },
+    {
+      "id": 15,
+      "name": "Espada de Oro con Filo",
+      "description": "Espada rápida pero delicada",
+      "long_description": "Aunque es menos duradera, esta espada de oro está afilada con un encantamiento de filo, lo que aumenta su daño.",
+      "points_required": 2500,
+      "command": "/give <player> minecraft:golden_sword 1 sharpness:3"
+    },
+    {
+      "id": 16,
+      "name": "Botas con Encantamiento de Caída Lenta",
+      "description": "Botas que reducen el daño por caídas",
+      "long_description": "Con estas botas encantadas, podrás saltar desde mayores alturas sin recibir daño, facilitando la exploración de terrenos elevados.",
+      "points_required": 2800,
+      "command": "/give <player> minecraft:leather_boots 1 feather_falling:4"
+    },
+    {
+      "id": 17,
+      "name": "Pico de Hierro Encantado",
+      "description": "Herramienta resistente para minería",
+      "long_description": "Este pico de hierro está reforzado con un encantamiento de durabilidad, lo que te permitirá minar más antes de que se desgaste.",
+      "points_required": 3000,
+      "command": "/give <player> minecraft:iron_pickaxe 1 unbreaking:3"
+    },
+    {
+      "id": 18,
+      "name": "Escudo de Diamante",
+      "description": "Máxima protección contra ataques",
+      "long_description": "Un escudo de diamante robusto, capaz de absorber gran cantidad de daño, ideal para enfrentamientos intensos.",
+      "points_required": 3500,
+      "command": "/give <player> minecraft:shield 1"
+    },
+    {
+      "id": 19,
+      "name": "Tótem de Inmortalidad",
+      "description": "Te salva de la muerte una vez",
+      "long_description": "Este valioso tótem te protegerá de la muerte, otorgándote una segunda oportunidad en situaciones críticas.",
+      "points_required": 4000,
+      "command": "/give <player> minecraft:totem_of_undying 1"
+    },
+    {
+      "id": 20,
+      "name": "Varita de Fuego",
+      "description": "Ataques a distancia con fuego",
+      "long_description": "Una poderosa varita que lanza ataques de fuego, perfecta para mantener a los enemigos a raya y causarles daño adicional.",
+      "points_required": 4500,
+      "command": "/give <player> minecraft:blaze_rod 1"
+    },
+    {
+      "id": 21,
+      "name": "Guantes de Minería",
+      "description": "Aumenta la velocidad al minar",
+      "long_description": "Un pico de diamante que mejora significativamente tu velocidad de minería. Es ideal para aquellos que necesitan recursos rápidamente sin que la herramienta se desgaste tan rápido.",
+      "points_required": 5000,
+      "command": "/give <player> minecraft:diamond_pickaxe 1 efficiency:5"
+    },
+    {
+      "id": 22,
+      "name": "Hacha de Hierro Encantada",
+      "description": "Herramienta resistente para tala avanzada",
+      "long_description": "Este hacha de hierro con eficiencia aumentada te permitirá talar árboles y recolectar madera de forma más rápida y eficaz, optimizando tu tiempo en el juego.",
+      "points_required": 5500,
+      "command": "/give <player> minecraft:iron_axe 1 efficiency:4"
+    },
+    {
+      "id": 23,
+      "name": "Set Completo de Diamante",
+      "description": "Armadura completa de diamante",
+      "long_description": "Un set completo de armadura de diamante, que ofrece una excelente protección y resistencia, ideal para enfrentarte a los desafíos más peligrosos del juego.",
+      "points_required": 6000,
+      "command": "/give <player> minecraft:diamond_helmet 1; /give <player> minecraft:diamond_chestplate 1; /give <player> minecraft:diamond_leggings 1; /give <player> minecraft:diamond_boots 1"
+    },
+    {
+      "id": 24,
+      "name": "Espada Legendaria",
+      "description": "Espada con encantamientos épicos",
+      "long_description": "Una espada de diamante con encantamientos de filo y durabilidad. Con ella, podrás enfrentarte a cualquier enemigo, infligiendo gran daño y resistiendo un uso prolongado.",
+      "points_required": 6500,
+      "command": "/give <player> minecraft:diamond_sword 1 sharpness:5 unbreaking:3"
+    },
+    {
+      "id": 25,
+      "name": "Escudo de Defensa",
+      "description": "Escudo con encantamiento de durabilidad",
+      "long_description": "Este escudo tiene un encantamiento que mejora su durabilidad, ideal para bloquear múltiples ataques sin que se rompa fácilmente.",
+      "points_required": 7000,
+      "command": "/give <player> minecraft:shield 1 unbreaking:3"
+    },
+    {
+      "id": 26,
+      "name": "Pico de Netherite",
+      "description": "La herramienta definitiva para minería avanzada",
+      "long_description": "El pico de netherite es la herramienta más avanzada para la minería, ofreciendo una resistencia superior y capaz de recolectar los materiales más duros del juego.",
+      "points_required": 7500,
+      "command": "/give <player> minecraft:netherite_pickaxe 1"
+    },
+    {
+      "id": 27,
+      "name": "Espada de Fuego",
+      "description": "Espada con daño de fuego adicional",
+      "long_description": "Esta espada de diamante tiene un encantamiento de aspecto ígneo que prende fuego a tus enemigos, causando daño adicional con cada golpe.",
+      "points_required": 8000,
+      "command": "/give <player> minecraft:diamond_sword 1 fire_aspect:2"
+    },
+    {
+      "id": 28,
+      "name": "Elytra",
+      "description": "Elytra para volar largas distancias",
+      "long_description": "Un par de elytras que te permite surcar los cielos. Aunque no tiene encantamientos, te brindará la libertad de explorar rápidamente desde las alturas.",
+      "points_required": 9000,
+      "command": "/give <player> minecraft:elytra 1"
+    },
+    {
+      "id": 29,
+      "name": "Acceso a Kit Omnipotente",
+      "description": "Desbloquea el acceso al kit omnipotente",
+      "long_description": "El kit omnipotente te ofrece una combinación de herramientas avanzadas y equipo para mejorar tu experiencia en el juego, dándote una ventaja notable.",
+      "points_required": 10000,
+      "command": "/lp user <player> permission set playerkits.kit.omnipotente true"
+    },
+    {
+      "id": 30,
+      "name": "Acceso a Kit Valhalla y Hogares Extra",
+      "description": "Desbloquea el acceso al kit Valhalla y te permite tener 4 hogares",
+      "long_description": "El Kit Valhalla incluye armamento y equipo de alta calidad, y te permite establecer hasta cuatro hogares, dándote flexibilidad en tus aventuras.",
+      "points_required": 12000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.valhalla true",
+        "/lp user <player> permission set essentials.sethome.multiple.4 true"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Acceso a vender 4 ítems en la subasta",
+      "description": "Permite vender hasta 4 ítems simultáneamente en la subasta",
+      "long_description": "Este beneficio te permite vender hasta cuatro ítems a la vez en la subasta, facilitando la gestión de tus recursos y ganando más monedas en menos tiempo.",
+      "points_required": 13000,
+      "command": "/lp user <player> permission set auction.sell.4 true"
+    },
+    {
+      "id": 32,
+      "name": "Acceso a Kit Apogeo y mochila 9x7",
+      "description": "Desbloquea el kit Apogeo y una mochila de 9x7 ranuras",
+      "long_description": "El kit Apogeo te proporciona equipo adicional y una mochila con capacidad de 9x7, lo que te permitirá almacenar más recursos durante tus aventuras.",
+      "points_required": 15000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.apogeo true",
+        "/lp user <player> permission set backpack.size.9x7 true"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Acceso a Kit Vendaval y Chunk Extra",
+      "description": "Desbloquea el kit Vendaval y la habilidad para reclamar un chunk extra",
+      "long_description": "El Kit Vendaval incluye equipo exclusivo y te permite reclamar un chunk extra, ideal para expandir tus dominios y asegurar más terreno.",
+      "points_required": 16000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.vendaval true",
+        "/lp user <player> permission set towny.claim.chunk.1 true"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Acceso a /repair",
+      "description": "Desbloquea el comando /repair para reparar tus objetos",
+      "long_description": "Con el comando /repair, podrás reparar tus herramientas y armas, lo que significa menos desgaste y mayor duración para todos tus ítems favoritos.",
+      "points_required": 17000,
+      "command": "/lp user <player> permission set essentials.repair true"
+    },
+    {
+      "id": 35,
+      "name": "Acceso a Kit Juggernaut y Hogares Extra",
+      "description": "Desbloquea el kit Juggernaut y te permite tener 5 hogares",
+      "long_description": "El Kit Juggernaut incluye equipo mejorado para el combate y te permite establecer hasta cinco hogares, facilitando tu movilidad por el mundo.",
+      "points_required": 18000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.juggernaut true",
+        "/lp user <player> permission set essentials.sethome.multiple.5 true"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Acceso a vender 5 ítems en la subasta",
+      "description": "Permite vender hasta 5 ítems simultáneamente en la subasta",
+      "long_description": "Este beneficio te permite listar hasta cinco ítems a la vez en la subasta, lo cual es ideal para maximizar tus ganancias y ventas en el mercado.",
+      "points_required": 19000,
+      "command": "/lp user <player> permission set auction.sell.5 true"
+    },
+    {
+      "id": 37,
+      "name": "Acceso a /anvil",
+      "description": "Desbloquea el comando /anvil para usar el yunque desde cualquier lugar",
+      "long_description": "Con el comando /anvil, podrás acceder a un yunque donde sea que estés, permitiéndote reparar y mejorar tus herramientas y armas de manera conveniente.",
+      "points_required": 20000,
+      "command": "/lp user <player> permission set essentials.anvil true"
+    },
+    {
+      "id": 38,
+      "name": "Acceso a Kit Omnipotente y mochila 9x9",
+      "description": "Desbloquea el kit Omnipotente y una mochila de 9x9 ranuras",
+      "long_description": "El kit Omnipotente viene con equipo y objetos especiales, y la mochila de 9x9 te proporciona gran capacidad para llevar todos tus recursos.",
+      "points_required": 22000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.omnipotente true",
+        "/lp user <player> permission set backpack.size.9x9 true"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Montura con Velocidad Mejorada",
+      "description": "Permite usar una montura con velocidad incrementada",
+      "long_description": "Esta montura especial te permite moverte con mayor velocidad, ideal para exploraciones y desplazamientos rápidos por el mapa.",
+      "points_required": 23000,
+      "command": "/give <player> minecraft:saddle 1; /effect give <player> minecraft:speed 1000000 1 true"
+    },
+    {
+      "id": 40,
+      "name": "Acceso a /fly",
+      "description": "Permite al jugador volar libremente en el mundo",
+      "long_description": "Con el permiso para usar /fly, podrás desplazarte volando por el mundo, lo que hace más fácil explorar y moverte rápidamente de un lugar a otro.",
+      "points_required": 25000,
+      "command": "/lp user <player> permission set essentials.fly true"
+    }
+  ],
+  "premium_rewards": [
+    {
+      "id": 1,
+      "name": "Poción de Curación Suprema",
+      "description": "Restaura la salud completa de inmediato",
+      "long_description": "Una poción poderosa que restaura toda tu salud instantáneamente, ideal para esos momentos críticos en los que necesitas volver al combate al máximo.",
+      "points_required": 100,
+      "command": "/give <player> potion 1 effect:instant_health power:2 duration:0"
+    },
+    {
+      "id": 2,
+      "name": "Espada de Hierro Afilada",
+      "description": "Espada de hierro con encantamiento de filo",
+      "long_description": "Una espada de hierro encantada con filo, que inflige más daño que una espada común, ideal para combates tempranos y enemigos de poca resistencia.",
+      "points_required": 150,
+      "command": "/give <player> minecraft:iron_sword 1 sharpness:2"
+    },
+    {
+      "id": 3,
+      "name": "Armadura de Cuero Reforzada",
+      "description": "Armadura de cuero encantada para mayor defensa",
+      "long_description": "Un conjunto de armadura de cuero reforzada con encantamientos de protección, ofreciendo una mayor defensa en tus primeras aventuras.",
+      "points_required": 300,
+      "command": "/give <player> minecraft:leather_helmet 1 protection:2; /give <player> minecraft:leather_chestplate 1 protection:2; /give <player> minecraft:leather_leggings 1 protection:2; /give <player> minecraft:leather_boots 1 protection:2"
+    },
+    {
+      "id": 4,
+      "name": "100 Bloques de Madera",
+      "description": "Doble cantidad de bloques de madera para construir",
+      "long_description": "Un lote de 100 bloques de madera, suficiente para construir una base resistente y protegerte de los peligros del exterior.",
+      "points_required": 400,
+      "command": "/give <player> minecraft:oak_planks 100"
+    },
+    {
+      "id": 5,
+      "name": "100 Bloques de Piedra",
+      "description": "Material de construcción mejorado para bases sólidas",
+      "long_description": "Un suministro de 100 bloques de piedra, un material confiable y duradero para construir estructuras de defensa y evitar ataques.",
+      "points_required": 500,
+      "command": "/give <player> minecraft:stone 100"
+    },
+    {
+      "id": 6,
+      "name": "20 Manzanas Doradas Encantadas",
+      "description": "Manzanas doradas con efecto de regeneración",
+      "long_description": "Un conjunto de manzanas doradas encantadas que no solo restauran salud, sino que también otorgan regeneración y resistencia adicional.",
+      "points_required": 700,
+      "command": "/give <player> minecraft:enchanted_golden_apple 20"
+    },
+    {
+      "id": 7,
+      "name": "Arco Poderoso con Golpe",
+      "description": "Arco encantado con poder y golpe para mayor impacto",
+      "long_description": "Este arco premium está encantado con poder y golpe, permitiéndote infligir un daño más significativo y repeler a los enemigos en combate.",
+      "points_required": 900,
+      "command": "/give <player> minecraft:bow 1 power:3 punch:1"
+    },
+    {
+      "id": 8,
+      "name": "100 Flechas",
+      "description": "Flechas adicionales para el arco encantado",
+      "long_description": "Un conjunto de 100 flechas que te permite mantenerte bien armado en combate a distancia. Perfecto para quienes prefieren atacar desde lejos.",
+      "points_required": 1000,
+      "command": "/give <player> minecraft:arrow 100"
+    },
+    {
+      "id": 9,
+      "name": "Armadura de Hierro Reforzada",
+      "description": "Conjunto completo de armadura de hierro encantada",
+      "long_description": "Un set completo de armadura de hierro con encantamientos de protección. Esta armadura te ofrece una resistencia considerable contra enemigos y peligros.",
+      "points_required": 1200,
+      "command": "/give <player> minecraft:iron_helmet 1 protection:2; /give <player> minecraft:iron_chestplate 1 protection:2; /give <player> minecraft:iron_leggings 1 protection:2; /give <player> minecraft:iron_boots 1 protection:2"
+    },
+    {
+      "id": 10,
+      "name": "Espada de Diamante Potenciada",
+      "description": "Espada de diamante con encantamientos de daño",
+      "long_description": "Una espada de diamante con encantamientos de filo y durabilidad, ideal para enfrentarte a enemigos fuertes y resistir varios combates sin romperse.",
+      "points_required": 1500,
+      "command": "/give <player> minecraft:diamond_sword 1 sharpness:3 unbreaking:2"
+    },
+    {
+      "id": 11,
+      "name": "Escudo de Hierro Irrompible",
+      "description": "Escudo de hierro con durabilidad aumentada",
+      "long_description": "Un escudo de hierro extremadamente resistente, encantado con un nivel 3 de durabilidad, lo que lo hace mucho más efectivo para bloquear ataques potentes sin desgaste notable.",
+      "points_required": 1600,
+      "command": "/give <player> minecraft:shield 1 unbreaking:3"
+    },
+    {
+      "id": 12,
+      "name": "300 Bloques de Piedra",
+      "description": "Material extra para construcciones masivas",
+      "long_description": "Un gran suministro de 300 bloques de piedra que te permitirá construir fortificaciones enormes y mantener tus construcciones seguras y duraderas.",
+      "points_required": 1800,
+      "command": "/give <player> minecraft:stone 300"
+    },
+    {
+      "id": 13,
+      "name": "Poción de Fuerza Extrema Mejorada",
+      "description": "Incrementa drásticamente tu daño temporalmente",
+      "long_description": "Esta poción mejorada de fuerza aumenta tu daño con un nivel 3 de fuerza durante cinco minutos, ideal para enfrentamientos con jefes o para sobrevivir a oleadas de enemigos.",
+      "points_required": 2000,
+      "command": "/give <player> potion 1 effect:strength power:3 duration:300"
+    },
+    {
+      "id": 14,
+      "name": "Casco de Diamante de Protección Alta",
+      "description": "Casco de diamante con alta protección",
+      "long_description": "Este casco de diamante cuenta con encantamientos avanzados de protección nivel 4 y durabilidad nivel 2, proporcionando una defensa sólida contra ataques a la cabeza.",
+      "points_required": 2200,
+      "command": "/give <player> minecraft:diamond_helmet 1 protection:4 unbreaking:2"
+    },
+    {
+      "id": 15,
+      "name": "Espada de Oro de Filo Extremo",
+      "description": "Espada de oro con daño mejorado y durabilidad",
+      "long_description": "A pesar de su menor resistencia, esta espada de oro tiene un filo extremo de nivel 5 y durabilidad nivel 3, infligiendo gran daño y resistiendo más combates.",
+      "points_required": 2500,
+      "command": "/give <player> minecraft:golden_sword 1 sharpness:5 unbreaking:3"
+    },
+    {
+      "id": 16,
+      "name": "Botas de Diamante de Protección de Caída Extrema",
+      "description": "Botas de diamante con alta resistencia a caídas",
+      "long_description": "Con un encantamiento de caída lenta nivel 5 y protección nivel 2, estas botas permiten lanzarse desde alturas extremas sin riesgo de daño.",
+      "points_required": 2800,
+      "command": "/give <player> minecraft:diamond_boots 1 feather_falling:5 protection:2"
+    },
+    {
+      "id": 17,
+      "name": "Pico de Hierro Irrompible",
+      "description": "Pico de hierro extremadamente duradero",
+      "long_description": "Este pico de hierro tiene un encantamiento de durabilidad nivel 5 y eficiencia nivel 3, ideal para minería intensiva sin desgaste rápido.",
+      "points_required": 3000,
+      "command": "/give <player> minecraft:iron_pickaxe 1 unbreaking:5 efficiency:3"
+    },
+    {
+      "id": 18,
+      "name": "Escudo de Diamante de Máxima Defensa",
+      "description": "Escudo de diamante con durabilidad máxima",
+      "long_description": "Este escudo de diamante cuenta con un encantamiento de durabilidad nivel 5, permitiéndote bloquear ataques sin apenas desgaste.",
+      "points_required": 3500,
+      "command": "/give <player> minecraft:shield 1 unbreaking:5"
+    },
+    {
+      "id": 19,
+      "name": "Trío de Tótems de Inmortalidad",
+      "description": "Tres tótems para evitar la muerte en situaciones críticas",
+      "long_description": "Un set de tres tótems de inmortalidad que te protege de la muerte en tres ocasiones, ideal para explorar áreas de alto riesgo.",
+      "points_required": 4000,
+      "command": "/give <player> minecraft:totem_of_undying 3"
+    },
+    {
+      "id": 20,
+      "name": "Varita de Fuego Mejorada",
+      "description": "Varita que lanza ataques de fuego más intensos",
+      "long_description": "Esta varita de fuego tiene un encantamiento de aspecto ígneo nivel 3, lo que permite infligir mayor daño de fuego a distancia.",
+      "points_required": 4500,
+      "command": "/give <player> minecraft:blaze_rod 1 fire_aspect:3"
+    },
+    {
+      "id": 21,
+      "name": "Guantes de Minería Ultra Eficientes",
+      "description": "Pico de diamante con alta eficiencia",
+      "long_description": "Este pico de diamante tiene un encantamiento de eficiencia nivel 5, lo que permite minar rápidamente cualquier material, ideal para recolectar grandes cantidades en poco tiempo.",
+      "points_required": 5000,
+      "command": "/give <player> minecraft:diamond_pickaxe 1 efficiency:5 unbreaking:3"
+    },
+    {
+      "id": 22,
+      "name": "Hacha de Hierro Duradera",
+      "description": "Hacha de hierro con durabilidad y eficiencia",
+      "long_description": "Esta hacha de hierro está encantada con eficiencia nivel 4 y durabilidad nivel 3, lo que permite talar árboles rápidamente y con menor desgaste.",
+      "points_required": 5500,
+      "command": "/give <player> minecraft:iron_axe 1 efficiency:4 unbreaking:3"
+    },
+    {
+      "id": 23,
+      "name": "Set Completo de Diamante Reforzado",
+      "description": "Armadura completa de diamante con alta protección",
+      "long_description": "Este set de armadura de diamante está encantado con protección nivel 3, ofreciendo una defensa muy robusta contra los ataques más peligrosos.",
+      "points_required": 6000,
+      "command": "/give <player> minecraft:diamond_helmet 1 protection:3; /give <player> minecraft:diamond_chestplate 1 protection:3; /give <player> minecraft:diamond_leggings 1 protection:3; /give <player> minecraft:diamond_boots 1 protection:3"
+    },
+    {
+      "id": 24,
+      "name": "Espada Legendaria de Filo Supremo",
+      "description": "Espada de diamante con filo y durabilidad",
+      "long_description": "Una espada de diamante encantada con filo nivel 5 y durabilidad nivel 3, ideal para enfrentarte a los enemigos más difíciles sin preocuparte por el desgaste.",
+      "points_required": 6500,
+      "command": "/give <player> minecraft:diamond_sword 1 sharpness:5 unbreaking:3"
+    },
+    {
+      "id": 25,
+      "name": "Escudo de Diamante Protector",
+      "description": "Escudo de diamante con alta durabilidad",
+      "long_description": "Este escudo de diamante tiene un encantamiento de durabilidad nivel 4, lo que permite bloquear una gran cantidad de ataques sin romperse.",
+      "points_required": 7000,
+      "command": "/give <player> minecraft:shield 1 unbreaking:4"
+    },
+    {
+      "id": 26,
+      "name": "Pico de Netherite de Minería Avanzada",
+      "description": "Pico de netherite con eficiencia mejorada",
+      "long_description": "Este pico de netherite cuenta con encantamientos de eficiencia nivel 5 y durabilidad nivel 3, haciendo que la minería sea rápida y con menor desgaste.",
+      "points_required": 7500,
+      "command": "/give <player> minecraft:netherite_pickaxe 1 efficiency:5 unbreaking:3"
+    },
+    {
+      "id": 27,
+      "name": "Espada de Fuego Potente",
+      "description": "Espada de diamante con aspecto de fuego",
+      "long_description": "Esta espada de diamante tiene un encantamiento de aspecto ígneo nivel 2, que inflige daño de fuego prolongado en cada golpe.",
+      "points_required": 8000,
+      "command": "/give <player> minecraft:diamond_sword 1 fire_aspect:2 unbreaking:2"
+    },
+    {
+      "id": 28,
+      "name": "Elytra con Durabilidad Máxima",
+      "description": "Elytra con encantamiento de durabilidad alto",
+      "long_description": "Esta elytra está encantada con durabilidad nivel 5, permitiendo vuelos largos y seguros sin preocuparse por el desgaste.",
+      "points_required": 9000,
+      "command": "/give <player> minecraft:elytra 1 unbreaking:5"
+    },
+    {
+      "id": 29,
+      "name": "Acceso a Kit Ragnarök",
+      "description": "Desbloquea el Kit Ragnarök y 5 hogares",
+      "long_description": "El Kit Ragnarök proporciona armamento y equipo de élite, además de la habilidad para establecer hasta 5 hogares, facilitando la exploración y el acceso rápido a tus bases.",
+      "points_required": 10000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.ragnarok true",
+        "/lp user <player> permission set essentials.sethome.multiple.5 true"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Acceso a Vender 6 Ítems en la Subasta",
+      "description": "Permite vender hasta 6 ítems en la subasta",
+      "long_description": "Este beneficio permite listar hasta seis ítems a la vez en la subasta, facilitando la gestión de tus ventas y maximizando tus ganancias.",
+      "points_required": 12000,
+      "command": "/lp user <player> permission set auction.sell.6 true"
+    },
+    {
+      "id": 31,
+      "name": "Acceso a Kit Valhalla",
+      "description": "Desbloquea el Kit Valhalla y acceso a 6 hogares",
+      "long_description": "El Kit Valhalla ofrece equipo de netherita de alto nivel y permite establecer hasta 6 hogares, perfecto para los jugadores que buscan expandir sus dominios.",
+      "points_required": 13000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.valhalla true",
+        "/lp user <player> permission set essentials.sethome.multiple.6 true"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Acceso a Kit Arcángel",
+      "description": "Desbloquea el Kit Arcángel con mochila de 9x9 y visión nocturna",
+      "long_description": "El Kit Arcángel incluye equipo de netherita y una mochila de 9x9 ranuras, además de la habilidad de activar visión nocturna en cualquier momento para facilitar la exploración nocturna.",
+      "points_required": 15000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.arcangel true",
+        "/lp user <player> permission set backpack.size.9x9 true",
+        "/lp user <player> permission set essentials.nightvision true"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Acceso a Kit Vendaval",
+      "description": "Desbloquea el Kit Vendaval y un chunk extra",
+      "long_description": "El Kit Vendaval otorga equipo de netherita y la habilidad de reclamar un chunk adicional, ideal para ampliar tu base o territorio en el servidor.",
+      "points_required": 16000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.vendaval true",
+        "/lp user <player> permission set towny.claim.chunk.1 true"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Acceso a /repair ilimitado",
+      "description": "Repara tus objetos sin límites de tiempo",
+      "long_description": "Con el comando /repair ilimitado, podrás restaurar tus herramientas y armas sin preocuparte por el desgaste, manteniendo tu equipo siempre en perfectas condiciones.",
+      "points_required": 17000,
+      "command": "/lp user <player> permission set essentials.repair true"
+    },
+    {
+      "id": 35,
+      "name": "Acceso a Kit Leviatán y comando /back",
+      "description": "Desbloquea el Kit Leviatán y la habilidad para volver a tu último punto de muerte",
+      "long_description": "El Kit Leviatán incluye equipo avanzado de netherita y el comando /back para regresar al último punto de muerte o ubicación, facilitando la recuperación de tus pertenencias y recursos.",
+      "points_required": 18000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.leviatan true",
+        "/lp user <player> permission set essentials.sethome.multiple.7 true",
+        "/lp user <player> permission set essentials.back true"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Acceso a vender 7 ítems en la subasta y 10,000 monedas",
+      "description": "Permite vender hasta 7 ítems en la subasta y otorga 10,000 monedas",
+      "long_description": "Este beneficio permite listar hasta siete ítems simultáneamente en la subasta y otorga un bono de 10,000 monedas para que puedas equiparte o comerciar en el servidor.",
+      "points_required": 19000,
+      "command": [
+        "/lp user <player> permission set auction.sell.7 true",
+        "/eco give <player> 10000"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Acceso a /anvil y Enderchest",
+      "description": "Usa el yunque y el enderchest desde cualquier ubicación",
+      "long_description": "Accede a /anvil y /enderchest desde cualquier lugar, permitiéndote reparar y almacenar ítems sin interrupciones, incluso durante largas expediciones.",
+      "points_required": 20000,
+      "command": [
+        "/lp user <player> permission set essentials.anvil true",
+        "/lp user <player> permission set essentials.enderchest true"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Acceso a Kit Titán y mochila 10x10",
+      "description": "Desbloquea el Kit Titán con equipo de netherita y mochila de gran capacidad",
+      "long_description": "El Kit Titán incluye equipo épico de netherita y una mochila de 10x10 ranuras, ideal para almacenar grandes cantidades de recursos y equipamiento.",
+      "points_required": 22000,
+      "command": [
+        "/lp user <player> permission set playerkits.kit.titan true",
+        "/lp user <player> permission set backpack.size.10x10 true"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Acceso a /fly y 20,000 monedas",
+      "description": "Permite volar y otorga 20,000 monedas",
+      "long_description": "El comando /fly te permite explorar rápidamente y acceder a zonas de difícil acceso, junto con un bono de 20,000 monedas para gastar en el servidor.",
+      "points_required": 23000,
+      "command": [
+        "/lp user <player> permission set essentials.fly true",
+        "/eco give <player> 20000"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Espada de Dragón de Netherita Legendaria",
+      "description": "Espada de netherita personalizada con encantamientos poderosos",
+      "long_description": "Una espada única de netherita personalizada con el nombre Espada de Dragón, encantada con filo nivel 5 y aspecto de fuego nivel 2, perfecta para enfrentar enemigos poderosos.",
+      "points_required": 25000,
+      "command": "/give <player> minecraft:netherite_sword 1 name:Espada_de_Dragón sharpness:5 fire_aspect:2 unbreaking:3"
+    }
+  ]
+}

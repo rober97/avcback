@@ -1,0 +1,1572 @@
+{
+  "achievements":[
+     {
+        "id":1,
+        "name":"Asesino de Phantoms",
+        "description":"Mata 15 phantoms",
+        "type":"mob_kill",
+        "target":"PHANTOM",
+        "count":15
+     },
+     {
+        "id":2,
+        "name":"Activador de Faros",
+        "description":"Activa 3 faros",
+        "type":"block_use",
+        "target":"BEACON",
+        "count":3
+     },
+     {
+        "id":3,
+        "name":"Bibliotecario",
+        "description":"Crea 10 mesas de encantamiento",
+        "type":"block_place",
+        "target":"ENCHANTING_TABLE",
+        "count":10
+     },
+     {
+        "id":4,
+        "name":"Pescador en Lava",
+        "description":"Pesca 5 ítems en lava",
+        "type":"fishing",
+        "target":"lava",
+        "count":5
+     },
+     {
+        "id":5,
+        "name":"Escalador de Montañas",
+        "description":"Sube a una montaña de al menos 200 bloques de altura",
+        "type":"reach_height",
+        "target":"200",
+        "count":1
+     },
+     {
+        "id":6,
+        "name":"Recolector de Esponjas",
+        "description":"Cosecha 10 esponjas",
+        "type":"block_break",
+        "target":"SPONGE",
+        "count":10
+     },
+     {
+        "id":7,
+        "name":"Buzo de Profundidades",
+        "description":"Nada 100 bloques en aguas profundas",
+        "type":"swim_distance",
+        "target":"deep_ocean",
+        "count":100
+     },
+     {
+        "id":8,
+        "name":"Cazador de Slimes",
+        "description":"Mata 30 slimes",
+        "type":"mob_kill",
+        "target":"SLIME",
+        "count":30
+     },
+     {
+        "id":9,
+        "name":"Constructor Genial",
+        "description":"Coloca 1000 bloques de cualquier tipo",
+        "type":"block_place",
+        "target":"ANY",
+        "count":1000
+     },
+     {
+        "id":10,
+        "name":"Recolector de Hielo",
+        "description":"Recolecta 50 bloques de hielo",
+        "type":"block_break",
+        "target":"ICE",
+        "count":50
+     },
+     {
+        "id":11,
+        "name":"Asesino de Brutos Piglins",
+        "description":"Mata 10 brutos piglins",
+        "type":"mob_kill",
+        "target":"PIGLIN_BRUTE",
+        "count":10
+     },
+     {
+        "id":12,
+        "name":"Monta una tortuga durante 200 bloques",
+        "description":"Monta una tortuga durante 200 bloques",
+        "type":"ride_distance",
+        "target":"TURTLE",
+        "count":200
+     },
+     {
+        "id":13,
+        "name":"Corta 500 bloques de cualquier tipo de madera",
+        "description":"Corta 500 bloques de cualquier tipo de madera",
+        "type":"block_break",
+        "target":"ANY_WOOD",
+        "count":500
+     },
+     {
+        "id":14,
+        "name":"Mata 5 devastadores",
+        "description":"Mata 5 devastadores",
+        "type":"mob_kill",
+        "target":"RAVAGER",
+        "count":5
+     },
+     {
+        "id":15,
+        "name":"Encuentra 10 cofres enterrados",
+        "description":"Encuentra 10 cofres enterrados",
+        "type":"block_use",
+        "target":"BURIED_TREASURE",
+        "count":10
+     },
+     {
+        "id":16,
+        "name":"Recolecta 64 perlas de ender",
+        "description":"Recolecta 64 perlas de ender",
+        "type":"item_collect",
+        "target":"ENDER_PEARL",
+        "count":64
+     },
+     {
+        "id":17,
+        "name":"Mata 25 ahogados",
+        "description":"Mata 25 ahogados",
+        "type":"mob_kill",
+        "target":"DROWNED",
+        "count":25
+     },
+     {
+        "id":18,
+        "name":"Crea 50 pociones de cualquier tipo",
+        "description":"Crea 50 pociones de cualquier tipo",
+        "type":"crafting",
+        "target":"POTION",
+        "count":50
+     },
+     {
+        "id":19,
+        "name":"Domestica 5 zorros",
+        "description":"Domestica 5 zorros",
+        "type":"mob_tame",
+        "target":"FOX",
+        "count":5
+     },
+     {
+        "id":20,
+        "name":"Obtén 20 lingotes de netherita",
+        "description":"Obtén 20 lingotes de netherita",
+        "type":"item_collect",
+        "target":"NETHERITE_INGOT",
+        "count":20
+     },
+     {
+        "id":21,
+        "name":"Construye un faro completo",
+        "description":"Construye un faro completo",
+        "type":"block_place",
+        "target":"BEACON",
+        "count":1
+     },
+     {
+        "id":22,
+        "name":"Domestica 3 caballos",
+        "description":"Domestica 3 caballos",
+        "type":"mob_tame",
+        "target":"HORSE",
+        "count":3
+     },
+     {
+        "id":23,
+        "name":"Mata al Wither",
+        "description":"Mata al Wither",
+        "type":"mob_kill",
+        "target":"WITHER",
+        "count":1
+     },
+     {
+        "id":24,
+        "name":"Domestica 5 gatos",
+        "description":"Domestica 5 gatos",
+        "type":"mob_tame",
+        "target":"CAT",
+        "count":5
+     },
+     {
+        "id":25,
+        "name":"Coloca 100 bloques de redstone",
+        "description":"Coloca 100 bloques de redstone",
+        "type":"block_place",
+        "target":"REDSTONE_BLOCK",
+        "count":100
+     },
+     {
+        "id":26,
+        "name":"Cura 10 aldeanos zombies",
+        "description":"Cura 10 aldeanos zombies",
+        "type":"mob_cure",
+        "target":"ZOMBIE_VILLAGER",
+        "count":10
+     },
+     {
+        "id":27,
+        "name":"Mata 10 ghasts",
+        "description":"Mata 10 ghasts",
+        "type":"mob_kill",
+        "target":"GHAST",
+        "count":10
+     },
+     {
+        "id":28,
+        "name":"Vuela 1,000 bloques con una elytra",
+        "description":"Vuela 1,000 bloques con una elytra",
+        "type":"fly_distance",
+        "target":"ELYTRA",
+        "count":1000
+     },
+     {
+        "id":29,
+        "name":"Cosecha 100 calabazas",
+        "description":"Cosecha 100 calabazas",
+        "type":"block_break",
+        "target":"PUMPKIN",
+        "count":100
+     },
+     {
+        "id":30,
+        "name":"Cosecha 200 cañas de azúcar",
+        "description":"Cosecha 200 cañas de azúcar",
+        "type":"block_break",
+        "target":"SUGAR_CANE",
+        "count":200
+     },
+     {
+        "id":31,
+        "name":"Camina 5,000 bloques en el Nether",
+        "description":"Camina 5,000 bloques en el Nether",
+        "type":"walk_distance",
+        "target":"nether",
+        "count":5000
+     },
+     {
+        "id":32,
+        "name":"Mata 30 blazes",
+        "description":"Mata 30 blazes",
+        "type":"mob_kill",
+        "target":"BLAZE",
+        "count":30
+     },
+     {
+        "id":33,
+        "name":"Mata 25 endermans",
+        "description":"Mata 25 endermans",
+        "type":"mob_kill",
+        "target":"ENDERMAN",
+        "count":25
+     },
+     {
+        "id":34,
+        "name":"Protege 5 huevos de tortuga hasta que eclosionen",
+        "description":"Protege 5 huevos de tortuga hasta que eclosionen",
+        "type":"block_protect",
+        "target":"TURTLE_EGG",
+        "count":5
+     },
+     {
+        "id":35,
+        "name":"Mata 50 conejos",
+        "description":"Mata 50 conejos",
+        "type":"mob_kill",
+        "target":"RABBIT",
+        "count":50
+     },
+     {
+        "id":36,
+        "name":"Intercambia 10 veces con Piglins",
+        "description":"Intercambia 10 veces con Piglins",
+        "type":"trade",
+        "target":"PIGLIN",
+        "count":10
+     },
+     {
+        "id":37,
+        "name":"Completa 5 incursiones",
+        "description":"Completa 5 incursiones",
+        "type":"raid_complete",
+        "target":"RAID",
+        "count":5
+     },
+     {
+        "id":38,
+        "name":"Mata 20 arañas de cueva",
+        "description":"Mata 20 arañas de cueva",
+        "type":"mob_kill",
+        "target":"CAVE_SPIDER",
+        "count":20
+     },
+     {
+        "id":39,
+        "name":"Crea 10 golems de hierro",
+        "description":"Crea 10 golems de hierro",
+        "type":"mob_create",
+        "target":"IRON_GOLEM",
+        "count":10
+     },
+     {
+        "id":40,
+        "name":"Recolecta miel de 10 colmenas",
+        "description":"Recolecta miel de 10 colmenas",
+        "type":"block_use",
+        "target":"BEEHIVE",
+        "count":10
+     },
+     {
+        "id":41,
+        "name":"Mina 50 bloques de diamante",
+        "description":"Mina 50 bloques de diamante",
+        "type":"block_break",
+        "target":"DIAMOND_ORE",
+        "count":50
+     },
+     {
+        "id":42,
+        "name":"Camina 5,000 bloques en el desierto",
+        "description":"Camina 5,000 bloques en el desierto",
+        "type":"walk_distance",
+        "target":"desert",
+        "count":5000
+     },
+     {
+        "id":43,
+        "name":"Sobrevive a una caída en lava",
+        "description":"Sobrevive a una caída en lava",
+        "type":"damage",
+        "target":"LAVA",
+        "count":1
+     },
+     {
+        "id":44,
+        "name":"Domestica 5 lobos",
+        "description":"Domestica 5 lobos",
+        "type":"mob_tame",
+        "target":"WOLF",
+        "count":5
+     },
+     {
+        "id":45,
+        "name":"Crea una armadura completa de hierro",
+        "description":"Crea una armadura completa de hierro",
+        "type":"crafting",
+        "target":"IRON_ARMOR",
+        "count":4
+     },
+     {
+        "id":46,
+        "name":"Cosecha 1,000 cultivos",
+        "description":"Cosecha 1,000 cultivos",
+        "type":"block_break",
+        "target":"WHEAT",
+        "count":1000
+     },
+     {
+        "id":47,
+        "name":"Dispara 200 flechas",
+        "description":"Dispara 200 flechas",
+        "type":"shoot_arrow",
+        "target":"ARROW",
+        "count":200
+     },
+     {
+        "id":48,
+        "name":"Nada 2,000 bloques en el océano",
+        "description":"Nada 2,000 bloques en el océano",
+        "type":"swim_distance",
+        "target":"ocean",
+        "count":2000
+     },
+     {
+        "id":49,
+        "name":"Monta un cerdo durante 500 bloques",
+        "description":"Monta un cerdo durante 500 bloques",
+        "type":"ride_distance",
+        "target":"PIG",
+        "count":500
+     },
+     {
+        "id":50,
+        "name":"Defiende una aldea de un asalto de saqueadores",
+        "description":"Defiende una aldea de un asalto de saqueadores",
+        "type":"raid_defense",
+        "target":"RAID",
+        "count":1
+     },
+     {
+        "id":51,
+        "name":"Corta 100 árboles",
+        "description":"Corta 100 árboles",
+        "type":"block_break",
+        "target":"SPRUCE_LOG",
+        "count":100
+     },
+     {
+        "id":52,
+        "name":"Mata 50 mobs",
+        "description":"Mata 50 mobs",
+        "type":"mob_kill",
+        "target":"ZOMBIE",
+        "count":50
+     },
+     {
+        "id":53,
+        "name":"Mina 500 bloques de piedra",
+        "description":"Mina 500 bloques de piedra",
+        "type":"block_break",
+        "target":"STONE",
+        "count":500
+     },
+     {
+        "id":54,
+        "name":"Camina 10,000 bloques",
+        "description":"Camina 10,000 bloques",
+        "type":"walk_distance",
+        "target":"distance",
+        "count":10000
+     },
+     {
+        "id":55,
+        "name":"Pesca 30 peces",
+        "description":"Pesca 30 peces",
+        "type":"fishing",
+        "target":"fish",
+        "count":30
+     },
+     {
+        "id":56,
+        "name":"Mina 100 minerales de hierro",
+        "description":"Mina 100 minerales de hierro",
+        "type":"block_break",
+        "target":"IRON_ORE",
+        "count":100
+     },
+     {
+        "id":57,
+        "name":"Cultiva 200 cultivos",
+        "description":"Cultiva 200 cultivos",
+        "type":"block_place",
+        "target":"WHEAT_SEEDS",
+        "count":200
+     },
+     {
+        "id":58,
+        "name":"Coloca 500 bloques de piedra",
+        "description":"Coloca 500 bloques de piedra",
+        "type":"block_place",
+        "target":"STONE_BRICKS",
+        "count":500
+     },
+     {
+        "id":59,
+        "name":"Mata 20 creepers",
+        "description":"Mata 20 creepers",
+        "type":"mob_kill",
+        "target":"CREEPER",
+        "count":20
+     },
+     {
+        "id":60,
+        "name":"Mata al Dragón del End",
+        "description":"Mata al Dragón del End",
+        "type":"mob_kill",
+        "target":"ENDER_DRAGON",
+        "count":1
+     },
+     {
+        "id":61,
+        "name":"Encuentra 5 cofres del tesoro",
+        "description":"Encuentra 5 cofres del tesoro",
+        "type":"block_break",
+        "target":"CHEST",
+        "count":5
+     },
+     {
+        "id":62,
+        "name":"Cava 100 bloques de tierra",
+        "description":"Cava 100 bloques de tierra",
+        "type":"block_break",
+        "target":"DIRT",
+        "count":100
+     },
+     {
+        "id":63,
+        "name":"Camina 20,000 bloques",
+        "description":"Camina 20,000 bloques",
+        "type":"walk_distance",
+        "target":"distance",
+        "count":20000
+     },
+     {
+        "id":64,
+        "name":"Mata 50 golems de hierro",
+        "description":"Mata 50 golems de hierro",
+        "type":"mob_kill",
+        "target":"IRON_GOLEM",
+        "count":50
+     },
+     {
+        "id":65,
+        "name":"Recolecta 300 bloques de cactus",
+        "description":"Recolecta 300 bloques de cactus",
+        "type":"block_break",
+        "target":"CACTUS",
+        "count":300
+     },
+     {
+        "id":66,
+        "name":"Mata 100 mobs",
+        "description":"Mata 100 mobs",
+        "type":"mob_kill",
+        "target":"ZOMBIE",
+        "count":100
+     },
+     {
+        "id":67,
+        "name":"Cosecha 500 cultivos",
+        "description":"Cosecha 500 cultivos",
+        "type":"block_break",
+        "target":"WHEAT",
+        "count":500
+     },
+      {
+          "id":68,
+          "name":"Coloca 1,000 bloques de piedra",
+          "description":"Coloca 1,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":1000
+      },
+      {
+          "id":69,
+          "name":"Mata 50 creepers",
+          "description":"Mata 50 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":50
+      },
+      {
+          "id":70,
+          "name":"Mata al Dragón del End 5 veces",
+          "description":"Mata al Dragón del End 5 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":5
+      },
+      {
+          "id":71,
+          "name":"Encuentra 10 cofres del tesoro",
+          "description":"Encuentra 10 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":10
+      },
+      {
+          "id":72,
+          "name":"Cava 500 bloques de tierra",
+          "description":"Cava 500 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":500
+      },
+      {
+          "id":73,
+          "name":"Camina 50,000 bloques",
+          "description":"Camina 50,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":50000
+      },
+      {
+          "id":74,
+          "name":"Mata 100 golems de hierro",
+          "description":"Mata 100 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":100
+      },
+      {
+          "id":75,
+          "name":"Recolecta 1,000 bloques de cactus",
+          "description":"Recolecta 1,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":1000
+      },
+      {
+          "id":76,
+          "name":"Mata 200 mobs",
+          "description":"Mata 200 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":200
+      },
+      {
+          "id":77,
+          "name":"Cosecha 1,000 cultivos",
+          "description":"Cosecha 1,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":1000
+      },
+      {
+          "id":78,
+          "name":"Coloca 5,000 bloques de piedra",
+          "description":"Coloca 5,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":5000
+      },
+      {
+          "id":79,
+          "name":"Mata 500 creepers",
+          "description":"Mata 500 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":500
+      },
+      {
+          "id":80,
+          "name":"Mata al Dragón del End 10 veces",
+          "description":"Mata al Dragón del End 10 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":10
+      },
+      {
+          "id":81,
+          "name":"Encuentra 20 cofres del tesoro",
+          "description":"Encuentra 20 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":20
+      },
+      {
+          "id":82,
+          "name":"Cava 1,000 bloques de tierra",
+          "description":"Cava 1,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":1000
+      },
+      {
+          "id":83,
+          "name":"Camina 100,000 bloques",
+          "description":"Camina 100,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":100000
+      },
+      {
+          "id":84,
+          "name":"Mata 1,000 golems de hierro",
+          "description":"Mata 1,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":1000
+      },
+      {
+          "id":85,
+          "name":"Recolecta 5,000 bloques de cactus",
+          "description":"Recolecta 5,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":5000
+      },
+      {
+          "id":86,
+          "name":"Mata 2,000 mobs",
+          "description":"Mata 2,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":2000
+      },
+      {
+          "id":87,
+          "name":"Cosecha 5,000 cultivos",
+          "description":"Cosecha 5,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":5000
+      },
+      {
+          "id":88,
+          "name":"Coloca 10,000 bloques de piedra",
+          "description":"Coloca 10,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":10000
+      },
+      {
+          "id":89,
+          "name":"Mata 5,000 creepers",
+          "description":"Mata 5,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":5000
+      },
+      {
+          "id":90,
+          "name":"Mata al Dragón del End 20 veces",
+          "description":"Mata al Dragón del End 20 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":20
+      },
+      {
+          "id":91,
+          "name":"Encuentra 50 cofres del tesoro",
+          "description":"Encuentra 50 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":50
+      },
+      {
+          "id":92,
+          "name":"Cava 5,000 bloques de tierra",
+          "description":"Cava 5,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":5000
+      },
+      {
+          "id":93,
+          "name":"Camina 200,000 bloques",
+          "description":"Camina 200,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":200000
+      },
+      {
+          "id":94,
+          "name":"Mata 10,000 golems de hierro",
+          "description":"Mata 10,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":10000
+      },
+      {
+          "id":95,
+          "name":"Recolecta 10,000 bloques de cactus",
+          "description":"Recolecta 10,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":10000
+      },
+      {
+          "id":96,
+          "name":"Mata 20,000 mobs",
+          "description":"Mata 20,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":20000
+      },
+      {
+          "id":97,
+          "name":"Cosecha 10,000 cultivos",
+          "description":"Cosecha 10,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":10000
+      },
+      {
+          "id":98,
+          "name":"Coloca 50,000 bloques de piedra",
+          "description":"Coloca 50,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":50000
+      },
+      {
+          "id":99,
+          "name":"Mata 25,000 creepers",
+          "description":"Mata 25,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":25000
+      },
+      {
+          "id":100,
+          "name":"Mata al Dragón del End 50 veces",
+          "description":"Mata al Dragón del End 50 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":50
+      },
+      {
+          "id":101,
+          "name":"Encuentra 100 cofres del tesoro",
+          "description":"Encuentra 100 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":100
+      },
+      {
+          "id":102,
+          "name":"Cava 10,000 bloques de tierra",
+          "description":"Cava 10,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":10000
+      },
+      {
+          "id":103,
+          "name":"Camina 500,000 bloques",
+          "description":"Camina 500,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":500000
+      },
+      {
+          "id":104,
+          "name":"Mata 50,000 golems de hierro",
+          "description":"Mata 50,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":50000
+      },
+      {
+          "id":105,
+          "name":"Recolecta 50,000 bloques de cactus",
+          "description":"Recolecta 50,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":50000
+      },
+      {
+          "id":106,
+          "name":"Mata 100,000 mobs",
+          "description":"Mata 100,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":100000
+      },
+      {
+          "id":107,
+          "name":"Cosecha 50,000 cultivos",
+          "description":"Cosecha 50,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":50000
+      },
+      {
+          "id":108,
+          "name":"Coloca 100,000 bloques de piedra",
+          "description":"Coloca 100,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":100000
+      },
+      {
+          "id":109,
+          "name":"Mata 100,000 creepers",
+          "description":"Mata 100,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":100000
+      },
+      {
+          "id":110,
+          "name":"Mata al Dragón del End 100 veces",
+          "description":"Mata al Dragón del End 100 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":100
+      },
+      {
+          "id":111,
+          "name":"Encuentra 200 cofres del tesoro",
+          "description":"Encuentra 200 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":200
+      },
+      {
+          "id":112,
+          "name":"Cava 50,000 bloques de tierra",
+          "description":"Cava 50,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":50000
+      },
+      {
+          "id":113,
+          "name":"Camina 1,000,000 bloques",
+          "description":"Camina 1,000,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":1000000
+      },
+      {
+          "id":114,
+          "name":"Mata 500,000 golems de hierro",
+          "description":"Mata 500,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":500000
+      },
+      {
+          "id":115,
+          "name":"Recolecta 100,000 bloques de cactus",
+          "description":"Recolecta 100,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":100000
+      },
+      {
+          "id":116,
+          "name":"Mata 1,000,000 mobs",
+          "description":"Mata 1,000,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":1000000
+      },
+      {
+          "id":117,
+          "name":"Cosecha 100,000 cultivos",
+          "description":"Cosecha 100,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":100000
+      },
+      {
+          "id":118,
+          "name":"Coloca 500,000 bloques de piedra",
+          "description":"Coloca 500,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":500000
+      },
+      {
+          "id":119,
+          "name":"Mata 500,000 creepers",
+          "description":"Mata 500,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":500000
+      },
+      {
+          "id":120,
+          "name":"Mata al Dragón del End 200 veces",
+          "description":"Mata al Dragón del End 200 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":200
+      },
+      {
+          "id":121,
+          "name":"Encuentra 500 cofres del tesoro",
+          "description":"Encuentra 500 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":500
+      },
+      {
+          "id":122,
+          "name":"Cava 100,000 bloques de tierra",
+          "description":"Cava 100,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":100000
+      },
+      {
+          "id":123,
+          "name":"Camina 2,000,000 bloques",
+          "description":"Camina 2,000,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":2000000
+      },
+      {
+          "id":124,
+          "name":"Mata 1,000,000 golems de hierro",
+          "description":"Mata 1,000,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":1000000
+      },
+      {
+          "id":125,
+          "name":"Recolecta 500,000 bloques de cactus",
+          "description":"Recolecta 500,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":500000
+      },
+      {
+          "id":126,
+          "name":"Mata 2,000,000 mobs",
+          "description":"Mata 2,000,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":2000000
+      },
+      {
+          "id":127,
+          "name":"Cosecha 500,000 cultivos",
+          "description":"Cosecha 500,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":500000
+      },
+      {
+          "id":128,
+          "name":"Coloca 1,000,000 bloques de piedra",
+          "description":"Coloca 1,000,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":1000000
+      },
+      {
+          "id":129,
+          "name":"Mata 1,000,000 creepers",
+          "description":"Mata 1,000,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":1000000
+      },
+      {
+          "id":130,
+          "name":"Mata al Dragón del End 500 veces",
+          "description":"Mata al Dragón del End 500 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":500
+      },
+      {
+          "id":131,
+          "name":"Encuentra 1,000 cofres del tesoro",
+          "description":"Encuentra 1,000 cofres del tesoro",
+          "type":"block_break",
+          "target":"CHEST",
+          "count":1000
+      },
+      {
+          "id":132,
+          "name":"Cava 500,000 bloques de tierra",
+          "description":"Cava 500,000 bloques de tierra",
+          "type":"block_break",
+          "target":"DIRT",
+          "count":500000
+      },
+      {
+          "id":133,
+          "name":"Camina 10,000,000 bloques",
+          "description":"Camina 10,000,000 bloques",
+          "type":"walk_distance",
+          "target":"distance",
+          "count":10000000
+      },
+      {
+          "id":134,
+          "name":"Mata 5,000,000 golems de hierro",
+          "description":"Mata 5,000,000 golems de hierro",
+          "type":"mob_kill",
+          "target":"IRON_GOLEM",
+          "count":5000000
+      },
+      {
+          "id":135,
+          "name":"Recolecta 1,000,000 bloques de cactus",
+          "description":"Recolecta 1,000,000 bloques de cactus",
+          "type":"block_break",
+          "target":"CACTUS",
+          "count":1000000
+      },
+      {
+          "id":136,
+          "name":"Mata 10,000,000 mobs",
+          "description":"Mata 10,000,000 mobs",
+          "type":"mob_kill",
+          "target":"ZOMBIE",
+          "count":10000000
+      },
+      {
+          "id":137,
+          "name":"Cosecha 1,000,000 cultivos",
+          "description":"Cosecha 1,000,000 cultivos",
+          "type":"block_break",
+          "target":"WHEAT",
+          "count":1000000
+      },
+      {
+          "id":138,
+          "name":"Coloca 5,000,000 bloques de piedra",
+          "description":"Coloca 5,000,000 bloques de piedra",
+          "type":"block_place",
+          "target":"STONE_BRICKS",
+          "count":5000000
+      },
+      {
+          "id":139,
+          "name":"Mata 5,000,000 creepers",
+          "description":"Mata 5,000,000 creepers",
+          "type":"mob_kill",
+          "target":"CREEPER",
+          "count":5000000
+      },
+      {
+          "id":140,
+          "name":"Mata al Dragón del End 1,000 veces",
+          "description":"Mata al Dragón del End 1,000 veces",
+          "type":"mob_kill",
+          "target":"ENDER_DRAGON",
+          "count":1000
+      },
+      {
+        "id": 141,
+        "name": "Maestro de Cartografía",
+        "description": "Crea 10 mapas completos",
+        "type": "crafting",
+        "target": "MAP",
+        "count": 10
+      },
+      {
+        "id": 142,
+        "name": "Rey de los Cultivos",
+        "description": "Cosecha 1000 bloques de cultivos",
+        "type": "block_break",
+        "target": "CROP",
+        "count": 1000
+      },
+      {
+        "id": 143,
+        "name": "Explorador del Bosque",
+        "description": "Camina 5000 bloques en un bosque",
+        "type": "walk_distance",
+        "target": "FOREST",
+        "count": 5000
+      },
+      {
+        "id": 144,
+        "name": "Cazador de Endermites",
+        "description": "Mata 50 endermites",
+        "type": "mob_kill",
+        "target": "ENDERMITE",
+        "count": 50
+      },
+      {
+        "id": 145,
+        "name": "Minero de Oro",
+        "description": "Mina 100 bloques de mineral de oro",
+        "type": "block_break",
+        "target": "GOLD_ORE",
+        "count": 100
+      },
+      {
+        "id": 146,
+        "name": "Domador de Gatos",
+        "description": "Domestica 10 gatos",
+        "type": "mob_tame",
+        "target": "CAT",
+        "count": 10
+      },
+      {
+        "id": 147,
+        "name": "Sobreviviente del Pantano",
+        "description": "Camina 2000 bloques en un bioma de pantano",
+        "type": "walk_distance",
+        "target": "SWAMP",
+        "count": 2000
+      },
+      {
+        "id": 148,
+        "name": "Coleccionista de Miel",
+        "description": "Recolecta miel de 30 colmenas",
+        "type": "block_use",
+        "target": "BEEHIVE",
+        "count": 30
+      },
+      {
+        "id": 149,
+        "name": "Fabricante de Pancartas",
+        "description": "Crea 20 pancartas",
+        "type": "crafting",
+        "target": "BANNER",
+        "count": 20
+      },
+      {
+        "id": 150,
+        "name": "Experto en Pociones de Curación",
+        "description": "Prepara 15 pociones de curación",
+        "type": "crafting",
+        "target": "HEALING_POTION",
+        "count": 15
+      },
+      {
+        "id": 151,
+        "name": "Montador de Llamas",
+        "description": "Monta una llama por 300 bloques",
+        "type": "ride_distance",
+        "target": "LLAMA",
+        "count": 300
+      },
+      {
+        "id": 152,
+        "name": "Maestro de la Espada de Oro",
+        "description": "Mata 75 mobs con una espada de oro",
+        "type": "mob_kill",
+        "target": "ANY",
+        "count": 75
+      },
+      {
+        "id": 153,
+        "name": "Explorador del Océano",
+        "description": "Nada 3000 bloques en el océano",
+        "type": "swim_distance",
+        "target": "OCEAN",
+        "count": 3000
+      },
+      {
+        "id": 154,
+        "name": "Recolector de Hongos Nether",
+        "description": "Recolecta 50 hongos del Nether",
+        "type": "block_break",
+        "target": "NETHER_WART",
+        "count": 50
+      },
+      {
+        "id": 155,
+        "name": "Conquistador de Bastiones",
+        "description": "Explora y saquea 5 bastiones",
+        "type": "structure_explore",
+        "target": "BASTION",
+        "count": 5
+      },
+      {
+        "id": 156,
+        "name": "Destructor de Blazes",
+        "description": "Mata 100 blazes",
+        "type": "mob_kill",
+        "target": "BLAZE",
+        "count": 100
+      },
+      {
+        "id": 157,
+        "name": "Constructor de Conduits",
+        "description": "Activa 3 conduits",
+        "type": "block_use",
+        "target": "CONDUIT",
+        "count": 3
+      },
+      {
+        "id": 158,
+        "name": "Fabricante de Fuegos Artificiales",
+        "description": "Crea 50 fuegos artificiales",
+        "type": "crafting",
+        "target": "FIREWORK_ROCKET",
+        "count": 50
+      },
+      {
+        "id": 159,
+        "name": "Cazador de Pollos",
+        "description": "Mata 200 pollos",
+        "type": "mob_kill",
+        "target": "CHICKEN",
+        "count": 200
+      },
+      {
+        "id": 160,
+        "name": "Gran Granjero de Zanahorias",
+        "description": "Cosecha 400 zanahorias",
+        "type": "block_break",
+        "target": "CARROT",
+        "count": 400
+      },
+      {
+        "id": 161,
+        "name": "Constructor de Puentes",
+        "description": "Coloca 1000 bloques de puente",
+        "type": "block_place",
+        "target": "PLANKS",
+        "count": 1000
+      },
+      {
+        "id": 162,
+        "name": "Cazador de Esqueletos",
+        "description": "Mata 150 esqueletos",
+        "type": "mob_kill",
+        "target": "SKELETON",
+        "count": 150
+      },
+      {
+        "id": 163,
+        "name": "Constructor de Pistas de Aterrizaje",
+        "description": "Coloca 500 bloques de pista de aterrizaje",
+        "type": "block_place",
+        "target": "PLANKS",
+        "count": 500
+      },
+      {
+        "id": 164,
+        "name": "Cazador de Arañas",
+        "description": "Mata 100 arañas",
+        "type": "mob_kill",
+        "target": "SPIDER",
+        "count": 100
+      },
+      {
+        "id": 165,
+        "name": "Constructor de Puentes de Piedra",
+        "description": "Coloca 2000 bloques de puente de piedra",
+        "type": "block_place",
+        "target": "STONE_BRICKS",
+        "count": 2000
+      },
+      {
+        "id": 166,
+        "name": "Cazador de Slimes",
+        "description": "Mata 50 slimes",
+        "type": "mob_kill",
+        "target": "SLIME",
+        "count": 50
+      },
+      {
+        "id": 167,
+        "name": "Constructor de Pistas de Aterrizaje de Piedra",
+        "description": "Coloca 1000 bloques de pista de aterrizaje de piedra",
+        "type": "block_place",
+        "target": "STONE_BRICKS",
+        "count": 1000
+      },
+      {
+        "id": 168,
+        "name": "Cazador de Zombies",
+        "description": "Mata 200 zombies",
+        "type": "mob_kill",
+        "target": "ZOMBIE",
+        "count": 200
+      },
+      {
+        "id": 169,
+        "name": "Constructor de Puentes de Madera",
+        "description": "Coloca 3000 bloques de puente de madera",
+        "type": "block_place",
+        "target": "PLANKS",
+        "count": 3000
+      },
+      {
+        "id": 170,
+        "name": "Cazador de Piglins",
+        "description": "Mata 50 piglins",
+        "type": "mob_kill",
+        "target": "PIGLIN",
+        "count": 50
+      },
+      {
+        "id": 171,
+        "name": "Constructor de Pistas de Aterrizaje de Madera",
+        "description": "Coloca 1500 bloques de pista de aterrizaje de madera",
+        "type": "block_place",
+        "target": "PLANKS",
+        "count": 1500
+      },
+      {
+        "id": 172,
+        "name": "Cazador de Piglins Zombis",
+        "description": "Mata 25 piglins zombis",
+        "type": "mob_kill",
+        "target": "ZOMBIFIED_PIGLIN",
+        "count": 25
+      },
+      {
+        "id": 173,
+        "name": "Constructor de Pistas de Aterrizaje de Piedra",
+        "description": "Coloca 1000 bloques de pista de aterrizaje de piedra",
+        "type": "block_place",
+        "target": "STONE_BRICKS",
+        "count": 1000
+      },
+      {
+        "id": 174,
+        "name": "Cazador de Hoglins",
+        "description": "Mata 25 hoglins",
+        "type": "mob_kill",
+        "target": "HOGLIN",
+        "count": 25
+      },
+      {
+        "id": 175,
+        "name": "Constructor de Puentes de Madera",
+        "description": "Coloca 3000 bloques de puente de madera",
+        "type": "block_place",
+        "target": "PLANKS",
+        "count": 3000
+      },
+      {
+        "id": 176,
+        "name": "Cazador de Piglins Zombis",
+        "description": "Mata 25 piglins zombis",
+        "type": "mob_kill", 
+        "target": "ZOMBIFIED_PIGLIN", 
+        "count": 25 
+      },
+      {
+        "id": 177,
+        "name": "Maestro de las Pociones",
+        "description": "Prepara 100 pociones diferentes",
+        "type": "crafting",
+        "target": "POTION",
+        "count": 100
+      },
+      {
+        "id": 178,
+        "name": "Gran Cazador de Zombies",
+        "description": "Mata 250 zombies",
+        "type": "mob_kill",
+        "target": "ZOMBIE",
+        "count": 250
+      },
+      {
+        "id": 179,
+        "name": "Recorredor del Fin",
+        "description": "Camina 2000 bloques en el End",
+        "type": "walk_distance",
+        "target": "END",
+        "count": 2000
+      },
+      {
+        "id": 180,
+        "name": "Cazador de Pesadillas",
+        "description": "Mata 30 fantasmas",
+        "type": "mob_kill",
+        "target": "PHANTOM",
+        "count": 30
+      },
+      {
+        "id": 181,
+        "name": "Creador de Aldeas",
+        "description": "Construye 5 casas en una aldea",
+        "type": "structure_build",
+        "target": "VILLAGE_HOUSE",
+        "count": 5
+      },
+      {
+        "id": 182,
+        "name": "Domador de Lobos",
+        "description": "Domestica 15 lobos",
+        "type": "mob_tame",
+        "target": "WOLF",
+        "count": 15
+      },
+      {
+        "id": 183,
+        "name": "Fabricante de Tablones",
+        "description": "Corta 1000 bloques de madera",
+        "type": "block_break",
+        "target": "LOG",
+        "count": 1000
+      },
+      {
+        "id": 184,
+        "name": "Excavador de Arena",
+        "description": "Cava 2000 bloques de arena",
+        "type": "block_break",
+        "target": "SAND",
+        "count": 2000
+      },
+      {
+        "id": 185,
+        "name": "Guardián de la Fortaleza",
+        "description": "Explora y limpia una fortaleza del Nether",
+        "type": "structure_explore",
+        "target": "NETHER_FORTRESS",
+        "count": 1
+      },
+      {
+        "id": 186,
+        "name": "Herborista del Nether",
+        "description": "Recolecta 150 verrugas del Nether",
+        "type": "item_collect",
+        "target": "NETHER_WART",
+        "count": 150
+      },
+      {
+        "id": 187,
+        "name": "Cazador de Enderman",
+        "description": "Mata 50 Enderman",
+        "type": "mob_kill",
+        "target": "ENDERMAN",
+        "count": 50
+      },
+      {
+        "id": 188,
+        "name": "Corredor de la Jungla",
+        "description": "Camina 3000 bloques en la jungla",
+        "type": "walk_distance",
+        "target": "JUNGLE",
+        "count": 3000
+      },
+      {
+        "id": 189,
+        "name": "Explorador Subterráneo",
+        "description": "Recorre 5000 bloques bajo tierra",
+        "type": "walk_distance",
+        "target": "CAVE",
+        "count": 5000
+      },
+      {
+        "id": 190,
+        "name": "Constructor de Trampas",
+        "description": "Crea 20 trampas activas",
+        "type": "structure_build",
+        "target": "TRAP",
+        "count": 20
+      },
+      {
+        "id": 191,
+        "name": "Cocinero Experto",
+        "description": "Cocina 300 ítems de comida",
+        "type": "block_use",
+        "target": "FURNACE",
+        "count": 300
+      },
+      {
+        "id": 192,
+        "name": "Guerrero Submarino",
+        "description": "Mata 40 mobs bajo el agua",
+        "type": "mob_kill",
+        "target": "ANY_WATER_MOB",
+        "count": 40
+      },
+      {
+        "id": 193,
+        "name": "Minero de Obsidiana",
+        "description": "Mina 80 bloques de obsidiana",
+        "type": "block_break",
+        "target": "OBSIDIAN",
+        "count": 80
+      },
+      {
+        "id": 194,
+        "name": "Defensor de Portales",
+        "description": "Construye y activa 5 portales del Nether",
+        "type": "block_use",
+        "target": "NETHER_PORTAL",
+        "count": 5
+      },
+      {
+        "id": 195,
+        "name": "Tesorero de Minerales",
+        "description": "Recolecta 500 lingotes de cualquier mineral",
+        "type": "item_collect",
+        "target": "ANY_INGOT",
+        "count": 500
+      },
+      {
+        "id": 196,
+        "name": "Arquitecto de Torres",
+        "description": "Construye una torre de al menos 50 bloques de altura",
+        "type": "structure_build",
+        "target": "TOWER",
+        "count": 1
+      }
+  ]
+}

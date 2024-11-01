@@ -23,6 +23,7 @@ const createRewardsFromJson = async () => {
         const newReward = new Reward({
           name: reward.name,
           description: reward.description,
+          long_description: reward.long_description,
           points_required: reward.points_required,
           command: reward.command,
           category: "aventura", // Agregar una categoría para diferenciar las recompensas
@@ -46,6 +47,7 @@ const createRewardsFromJson = async () => {
         const newReward = new Reward({
           name: reward.name,
           description: reward.description,
+          long_description: reward.long_description,
           points_required: reward.points_required,
           command: reward.command,
           category: "premium", // Agregar una categoría para diferenciar las recompensas

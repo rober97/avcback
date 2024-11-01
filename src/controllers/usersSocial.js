@@ -1,7 +1,8 @@
 const User = require("../models/userSocial");
 const Post = require("../models/postModel");
 const bcrypt = require("bcryptjs");
-const Achievement = require("../models/achievement");
+const UserAchievement = require("../models/UserAchievement");
+const SystemAchievement = require("../models/SystemAchievement");
 const yaml = require("js-yaml");
 const fs = require("fs");
 const path = require("path");
@@ -179,20 +180,20 @@ const getUserById = async (req, res) => {
 };
 
 const getUserByUUID = async (req, res) => {
-    try {
-      let data = req.body;
-      if (data.uuid) {
-        const user_search = await User.findOne({
-          minecraftUUID: data.uuid,
-        });
-        res.json({ success: true, user: user_search });
-      } else {
-        res.json({ success: false, user: [] });
-      }
-    } catch (error) {
-      console.log(error);
+  try {
+    let data = req.body;
+    if (data.uuid) {
+      const user_search = await User.findOne({
+        minecraftUUID: data.uuid,
+      });
+      res.json({ success: true, user: user_search });
+    } else {
+      res.json({ success: false, user: [] });
     }
-  };
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getUUIDUser = async (req, res) => {
   try {
@@ -348,7 +349,7 @@ const getUsersPaginated = async (req, res) => {
 };
 
 const linkAccount = async (req, res) => {
-  const { token, uuid, username } = req.body;
+  const { token, uuid, username, rank } = req.body;
 
   try {
     // Buscar al usuario por el token (deberías tener una forma de validar el token en tu sistema)
@@ -362,6 +363,7 @@ const linkAccount = async (req, res) => {
 
     // Actualizar el UUID de Minecraft y el nombre de usuario de Minecraft en la cuenta del usuario
     user.minecraftUUID = uuid;
+    user.minecraftRank = rank || 'none';
     user.minecraftUsername = username; // Almacena el nombre de usuario de Minecraft
     user.minecraftToken = null; // Una vez usado el token, se puede limpiar
     await user.save();
@@ -459,52 +461,84 @@ const linkMinecraftAccount = async (req, res) => {
     return res.status(500).json({ message: "Error al vincular la cuenta." });
   }
 };
+
 const getAchievementsByUser = async (req, res) => {
   const { uuid } = req.params;
 
   try {
     // Buscar los logros del jugador en la base de datos
-    const playerAchievements = await Achievement.find({ uuid });
+    const playerAchievements = await UserAchievement.find({ uuid });
 
-    // Cargar todos los logros desde el archivo YAML
-    const filePath = path.join(__dirname, "achievements/data.yml");
-    const achievementsFile = fs.readFileSync(filePath, "utf8");
-    const allAchievements = yaml.load(achievementsFile).achievements;
+    // Buscar todos los logros del sistema
+    const allAchievements = await SystemAchievement.find();
 
-    // Comparar y vincular los logros del jugador con los logros cargados
-    const playerAchievementsData = playerAchievements.map((pa) => {
-      const matchingAchievement = allAchievements[pa.title];
+    // Vincular los logros del jugador con los logros del sistema
+    const achievementsWithProgress = allAchievements.map(systemAchievement => {
+      const userAchievement = playerAchievements.find(pa => pa.achievementKey === systemAchievement._id.toString());
+
       return {
-        name: matchingAchievement.name,
-        description: matchingAchievement.description,
-        progress: pa.progress,
-        count: matchingAchievement.count,
-        completed: pa.progress >= matchingAchievement.count,
-        title: pa.title,
+        id: systemAchievement._id, // Usar '_id' generado por MongoDB
+        name: systemAchievement.title,
+        description: systemAchievement.description,
+        progress: userAchievement ? userAchievement.progress : 0,
+        count: systemAchievement.count,
+        completed: userAchievement ? userAchievement.progress >= systemAchievement.count : false,
+        title: systemAchievement.title,
+        completionDate: userAchievement && userAchievement.completed ? userAchievement.completionDate : null, // Fecha de finalización si está completo
       };
     });
 
-    return res.status(200).json({ playerAchievements: playerAchievementsData });
+    return res.status(200).json({ success: true, playerAchievements: achievementsWithProgress });
   } catch (error) {
-    return res
-      .status(500)
-      .json({ message: "Error al obtener los logros del usuario.", error });
+    console.log("Error al obtener los logros del usuario:", error);
+    return res.status(500).json({ message: "Error al obtener los logros del usuario.", error });
   }
 };
 
-const getAllAchievements = async (req, res) => {
+
+const getTopAchievements = async (req, res) => {
   try {
-    const filePath = path.join(__dirname, "achievements/data.yml");
-    const achievementsFile = fs.readFileSync(filePath, "utf8");
-    const achievements = yaml.load(achievementsFile);
+    // Agrupación y conteo de logros completados por usuario
+    const topUsers = await UserAchievement.aggregate([
+      { $match: { completed: true } },
+      { $group: { _id: "$uuid", totalAchievements: { $sum: 1 } } },
+      { $sort: { totalAchievements: -1 } },
+      { $limit: 10 }
+    ]);
 
-    return res.status(200).json({ achievements });
+    
+
+    // Obtener datos adicionales de cada usuario con `uuid` correspondiente
+    const enrichedUsers = await Promise.all(
+      topUsers.map(async (user) => {
+        const userData = await User.findOne({ minecraftUUID: user._id.trim() }, "username uuid"); // Ajusta según el modelo de usuario
+        return userData
+          ? {
+              id: userData._id,
+              username: userData.username,
+              totalAchievements: user.totalAchievements,
+            }
+          : null; // Si no se encuentra el usuario, devuelve null
+      })
+    );
+
+    // Filtrar usuarios no encontrados
+    const validUsers = enrichedUsers.filter(user => user !== null);
+
+    res.status(200).json({
+      success: true,
+      topUsers: validUsers,
+    });
   } catch (error) {
-    return res
-      .status(500)
-      .json({ message: "Error al cargar los logros.", error });
+    console.error("Error al obtener el top de usuarios:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error al obtener el top de usuarios",
+      error,
+    });
   }
 };
+
 
 module.exports = {
   newUser,
@@ -522,7 +556,7 @@ module.exports = {
   generateToken,
   linkMinecraftAccount,
   getAchievementsByUser,
-  getAllAchievements,
+  getTopAchievements,
   getUUIDUser,
   getUserByUUID,
   searchUsersPaginated

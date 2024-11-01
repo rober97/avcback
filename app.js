@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require('express')
 const player = require('./src/controllers/player.js');
 
+const achievement = require('./src/controllers/achievements.js');
 const reward = require('./src/controllers/rewards.js');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
@@ -97,7 +98,7 @@ server.listen(port, () => {
 
 
 //reward.createRewardsFromJson()
-
+//achievement.createAchievementsFromJson()
 
 
 
