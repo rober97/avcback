@@ -636,13 +636,13 @@
     },
     {
       "id": 36,
-      "name": "Acceso a vender 7 ítems en la subasta y 10,000 monedas",
-      "description": "Permite vender hasta 7 ítems en la subasta y otorga 10,000 monedas",
-      "long_description": "Este beneficio permite listar hasta siete ítems simultáneamente en la subasta y otorga un bono de 10,000 monedas para que puedas equiparte o comerciar en el servidor.",
+      "name": "Acceso a vender 7 ítems en la subasta y 20,000 monedas",
+      "description": "Permite vender hasta 7 ítems en la subasta y otorga 20,000 monedas",
+      "long_description": "Este beneficio permite listar hasta siete ítems simultáneamente en la subasta y otorga un bono de 20,000 monedas para que puedas equiparte o comerciar en el servidor.",
       "points_required": 19000,
       "command": [
         "/lp user <player> permission set auction.sell.7 true",
-        "/eco give <player> 10000"
+        "/eco give <player> 20000"
       ]
     },
     {
@@ -669,13 +669,13 @@
     },
     {
       "id": 39,
-      "name": "Acceso a /fly y 20,000 monedas",
-      "description": "Permite volar y otorga 20,000 monedas",
-      "long_description": "El comando /fly te permite explorar rápidamente y acceder a zonas de difícil acceso, junto con un bono de 20,000 monedas para gastar en el servidor.",
+      "name": "Acceso a /fly y 50,000 monedas",
+      "description": "Permite volar y otorga 50,000 monedas",
+      "long_description": "El comando /fly te permite explorar rápidamente y acceder a zonas de difícil acceso, junto con un bono de 50,000 monedas para gastar en el servidor.",
       "points_required": 23000,
       "command": [
         "/lp user <player> permission set essentials.fly true",
-        "/eco give <player> 20000"
+        "/eco give <player> 50000"
       ]
     },
     {
