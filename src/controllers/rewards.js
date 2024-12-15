@@ -7,29 +7,57 @@ const mongoose = require('mongoose');
 
 const createRewardsFromJson = async () => {
   try {
-    // Ruta al archivo JSON que contiene las recompensas
     const filePath = path.join(__dirname, "../controllers/achievements/rewards.json");
-
-    // Leer el archivo JSON
     const rewardsData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-    // Procesar las recompensas de Aventura
-    for (const reward of rewardsData.aventura_rewards) {
-      // Verificar si la recompensa ya existe en la base de datos (por nombre o id)
+    // Parámetros ajustados
+    const aventuraConfig = {
+      basePoints: 1000, // Puntos base para aventuras
+      increment: 1800,  // Incremento por índice
+      exponent: 0.8,    // Exponente para escalado progresivo
+      qualityMultiplier: 2.2, // Multiplicador para recompensas marcadas como "buen nivel"
+    };
+
+    const premiumConfig = {
+      basePoints: 1000, // Puntos base para aventuras
+      increment: 1500,  // Incremento por índice
+      exponent: 0.7,    // Exponente para escalado progresivo
+      qualityMultiplier: 2.1, // Multiplicador para recompensas marcadas como "buen nivel"
+    };
+
+    // Fórmulas de cálculo
+    const calculatePoints = (basePoints, index, increment, exponent, qualityBoost, qualityMultiplier) => {
+      let points = basePoints + (index ** exponent) * increment;
+      if (qualityBoost) {
+        points *= qualityMultiplier; // Incrementa los puntos si tiene "qualityBoost"
+      }
+      return Math.round(points);
+    };
+
+    // Procesar recompensas de Aventura
+    for (let i = 0; i < rewardsData.aventura_rewards.length; i++) {
+      const reward = rewardsData.aventura_rewards[i];
+      reward.points_required = calculatePoints(
+        aventuraConfig.basePoints,
+        i,
+        aventuraConfig.increment,
+        aventuraConfig.exponent,
+        reward.qualityBoost || false, // Detectar si tiene qualityBoost
+        aventuraConfig.qualityMultiplier
+      );
+
       const existingReward = await Reward.findOne({ name: reward.name });
 
       if (!existingReward) {
-        // Crear la recompensa en la base de datos
         const newReward = new Reward({
           name: reward.name,
           description: reward.description,
           long_description: reward.long_description,
           points_required: reward.points_required,
           command: reward.command,
-          category: "aventura", // Agregar una categoría para diferenciar las recompensas
+          category: "aventura",
         });
 
-        // Guardar la recompensa en la base de datos
         await newReward.save();
         console.log(`Recompensa de aventura creada: ${reward.name}`);
       } else {
@@ -37,34 +65,45 @@ const createRewardsFromJson = async () => {
       }
     }
 
-    // Procesar las recompensas de Premium
-    for (const reward of rewardsData.premium_rewards) {
-      // Verificar si la recompensa ya existe en la base de datos (por nombre o id)
+    // Procesar recompensas de Premium
+    for (let i = 0; i < rewardsData.premium_rewards.length; i++) {
+      const reward = rewardsData.premium_rewards[i];
+      reward.points_required = calculatePoints(
+        premiumConfig.basePoints,
+        i,
+        premiumConfig.increment,
+        premiumConfig.exponent,
+        reward.qualityBoost || false, // Detectar si tiene qualityBoost
+        premiumConfig.qualityMultiplier
+      );
+
       const existingReward = await Reward.findOne({ name: reward.name });
 
       if (!existingReward) {
-        // Crear la recompensa en la base de datos
         const newReward = new Reward({
           name: reward.name,
           description: reward.description,
           long_description: reward.long_description,
           points_required: reward.points_required,
           command: reward.command,
-          category: "premium", // Agregar una categoría para diferenciar las recompensas
+          category: "premium",
         });
 
-        // Guardar la recompensa en la base de datos
         await newReward.save();
         console.log(`Recompensa premium creada: ${reward.name}`);
       } else {
         console.log(`La recompensa premium ya existe: ${reward.name}`);
       }
     }
-    console.log('TODO LISTO')
+
+    console.log("TODO LISTO");
   } catch (error) {
     console.log("Error al crear las recompensas:", error);
   }
 };
+
+
+
 
 const getRewardsList = async (req, res) => {
   try {

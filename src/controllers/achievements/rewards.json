@@ -230,7 +230,8 @@
       "description": "Desbloquea el acceso al kit omnipotente",
       "long_description": "El kit omnipotente te ofrece una combinación de herramientas avanzadas y equipo para mejorar tu experiencia en el juego, dándote una ventaja notable.",
       "points_required": 10000,
-      "command": "/lp user <player> permission set playerkits.kit.omnipotente true"
+      "command": "/lp user <player> permission set playerkits.kit.omnipotente true",
+      "qualityBoost": true
     },
     {
       "id": 30,
@@ -241,7 +242,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.valhalla true",
         "/lp user <player> permission set essentials.sethome.multiple.4 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 31,
@@ -249,7 +251,8 @@
       "description": "Permite vender hasta 4 ítems simultáneamente en la subasta",
       "long_description": "Este beneficio te permite vender hasta cuatro ítems a la vez en la subasta, facilitando la gestión de tus recursos y ganando más monedas en menos tiempo.",
       "points_required": 13000,
-      "command": "/lp user <player> permission set auction.sell.4 true"
+      "command": "/lp user <player> permission set auction.sell.4 true",
+      "qualityBoost": true
     },
     {
       "id": 32,
@@ -260,7 +263,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.apogeo true",
         "/lp user <player> permission set backpack.size.9x7 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 33,
@@ -271,7 +275,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.vendaval true",
         "/lp user <player> permission set towny.claim.chunk.1 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 34,
@@ -279,7 +284,8 @@
       "description": "Desbloquea el comando /repair para reparar tus objetos",
       "long_description": "Con el comando /repair, podrás reparar tus herramientas y armas, lo que significa menos desgaste y mayor duración para todos tus ítems favoritos.",
       "points_required": 17000,
-      "command": "/lp user <player> permission set essentials.repair true"
+      "command": "/lp user <player> permission set essentials.repair true",
+      "qualityBoost": true
     },
     {
       "id": 35,
@@ -290,7 +296,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.juggernaut true",
         "/lp user <player> permission set essentials.sethome.multiple.5 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 36,
@@ -298,7 +305,8 @@
       "description": "Permite vender hasta 5 ítems simultáneamente en la subasta",
       "long_description": "Este beneficio te permite listar hasta cinco ítems a la vez en la subasta, lo cual es ideal para maximizar tus ganancias y ventas en el mercado.",
       "points_required": 19000,
-      "command": "/lp user <player> permission set auction.sell.5 true"
+      "command": "/lp user <player> permission set auction.sell.5 true",
+      "qualityBoost": true
     },
     {
       "id": 37,
@@ -306,7 +314,8 @@
       "description": "Desbloquea el comando /anvil para usar el yunque desde cualquier lugar",
       "long_description": "Con el comando /anvil, podrás acceder a un yunque donde sea que estés, permitiéndote reparar y mejorar tus herramientas y armas de manera conveniente.",
       "points_required": 20000,
-      "command": "/lp user <player> permission set essentials.anvil true"
+      "command": "/lp user <player> permission set essentials.anvil true",
+      "qualityBoost": true
     },
     {
       "id": 38,
@@ -317,7 +326,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.omnipotente true",
         "/lp user <player> permission set backpack.size.9x9 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 39,
@@ -325,7 +335,8 @@
       "description": "Permite usar una montura con velocidad incrementada",
       "long_description": "Esta montura especial te permite moverte con mayor velocidad, ideal para exploraciones y desplazamientos rápidos por el mapa.",
       "points_required": 23000,
-      "command": "/give <player> minecraft:saddle 1; /effect give <player> minecraft:speed 1000000 1 true"
+      "command": "/give <player> minecraft:saddle 1; /effect give <player> minecraft:speed 1000000 1 true",
+      "qualityBoost": true
     },
     {
       "id": 40,
@@ -333,7 +344,8 @@
       "description": "Permite al jugador volar libremente en el mundo",
       "long_description": "Con el permiso para usar /fly, podrás desplazarte volando por el mundo, lo que hace más fácil explorar y moverte rápidamente de un lugar a otro.",
       "points_required": 25000,
-      "command": "/lp user <player> permission set essentials.fly true"
+      "command": "/lp user <player> permission set essentials.fly true",
+      "qualityBoost": true
     }
   ],
   "premium_rewards": [
@@ -527,7 +539,8 @@
       "description": "Espada de diamante con filo y durabilidad",
       "long_description": "Una espada de diamante encantada con filo nivel 5 y durabilidad nivel 3, ideal para enfrentarte a los enemigos más difíciles sin preocuparte por el desgaste.",
       "points_required": 6500,
-      "command": "/give <player> minecraft:diamond_sword 1 sharpness:5 unbreaking:3"
+      "command": "/give <player> minecraft:diamond_sword 1 sharpness:5 unbreaking:3",
+      "qualityBoost": true
     },
     {
       "id": 25,
@@ -570,7 +583,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.ragnarok true",
         "/lp user <player> permission set essentials.sethome.multiple.5 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 30,
@@ -578,7 +592,8 @@
       "description": "Permite vender hasta 6 ítems en la subasta",
       "long_description": "Este beneficio permite listar hasta seis ítems a la vez en la subasta, facilitando la gestión de tus ventas y maximizando tus ganancias.",
       "points_required": 12000,
-      "command": "/lp user <player> permission set auction.sell.6 true"
+      "command": "/lp user <player> permission set auction.sell.6 true",
+      "qualityBoost": true
     },
     {
       "id": 31,
@@ -589,7 +604,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.valhalla true",
         "/lp user <player> permission set essentials.sethome.multiple.6 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 32,
@@ -601,7 +617,8 @@
         "/lp user <player> permission set playerkits.kit.arcangel true",
         "/lp user <player> permission set backpack.size.9x9 true",
         "/lp user <player> permission set essentials.nightvision true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 33,
@@ -612,7 +629,8 @@
       "command": [
         "/lp user <player> permission set playerkits.kit.vendaval true",
         "/lp user <player> permission set towny.claim.chunk.1 true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 34,
@@ -620,7 +638,8 @@
       "description": "Repara tus objetos sin límites de tiempo",
       "long_description": "Con el comando /repair ilimitado, podrás restaurar tus herramientas y armas sin preocuparte por el desgaste, manteniendo tu equipo siempre en perfectas condiciones.",
       "points_required": 17000,
-      "command": "/lp user <player> permission set essentials.repair true"
+      "command": "/lp user <player> permission set essentials.repair true",
+      "qualityBoost": true
     },
     {
       "id": 35,
@@ -632,7 +651,8 @@
         "/lp user <player> permission set playerkits.kit.leviatan true",
         "/lp user <player> permission set essentials.sethome.multiple.7 true",
         "/lp user <player> permission set essentials.back true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 36,
@@ -643,7 +663,8 @@
       "command": [
         "/lp user <player> permission set auction.sell.7 true",
         "/eco give <player> 20000"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 37,
@@ -654,29 +675,31 @@
       "command": [
         "/lp user <player> permission set essentials.anvil true",
         "/lp user <player> permission set essentials.enderchest true"
-      ]
+      ],
+      "qualityBoost": true
     },
     {
       "id": 38,
-      "name": "Acceso a Kit Titán y mochila 10x10",
-      "description": "Desbloquea el Kit Titán con equipo de netherita y mochila de gran capacidad",
-      "long_description": "El Kit Titán incluye equipo épico de netherita y una mochila de 10x10 ranuras, ideal para almacenar grandes cantidades de recursos y equipamiento.",
-      "points_required": 22000,
-      "command": [
-        "/lp user <player> permission set playerkits.kit.titan true",
-        "/lp user <player> permission set backpack.size.10x10 true"
-      ]
-    },
-    {
-      "id": 39,
-      "name": "Acceso a /fly y 50,000 monedas",
+      "name": "Acceso a /fly y 100,000 de dinero",
       "description": "Permite volar y otorga 50,000 monedas",
       "long_description": "El comando /fly te permite explorar rápidamente y acceder a zonas de difícil acceso, junto con un bono de 50,000 monedas para gastar en el servidor.",
       "points_required": 23000,
       "command": [
         "/lp user <player> permission set essentials.fly true",
         "/eco give <player> 50000"
-      ]
+      ],
+      "qualityBoost": true
+    },
+    {
+      "id": 39,
+      "name": "Acceso a /god",
+      "description": "Desbloquea el modo Dios y se invencible",
+      "long_description": "Con el comando /god, te vuelves invencible y no recibirás daño de ningún tipo, lo que te permite explorar y enfrentarte a enemigos sin preocupaciones.",
+      "points_required": 22000,
+      "command": [
+        "/lp user <player> permission set essentials.god true"
+      ],
+      "qualityBoost": true
     },
     {
       "id": 40,
@@ -684,7 +707,8 @@
       "description": "Espada de netherita personalizada con encantamientos poderosos",
       "long_description": "Una espada única de netherita personalizada con el nombre Espada de Dragón, encantada con filo nivel 5 y aspecto de fuego nivel 2, perfecta para enfrentar enemigos poderosos.",
       "points_required": 25000,
-      "command": "/give <player> minecraft:netherite_sword 1 name:Espada_de_Dragón sharpness:5 fire_aspect:2 unbreaking:3"
+      "command": "/give <player> minecraft:netherite_sword 1 name:Espada_de_Dragón sharpness:5 fire_aspect:2 unbreaking:3",
+      "qualityBoost": true
     }
   ]
 }

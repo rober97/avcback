@@ -498,32 +498,41 @@ const getAchievementsByUser = async (req, res) => {
 
 const getTopAchievements = async (req, res) => {
   try {
-    // Agrupación y conteo de logros completados por usuario
+    // Agrupación y conteo de logros completados por usuario, sumando puntos
     const topUsers = await UserAchievement.aggregate([
       { $match: { completed: true } },
-      { $group: { _id: "$uuid", totalAchievements: { $sum: 1 } } },
-      { $sort: { totalAchievements: -1 } },
-      { $limit: 10 }
+      {
+        $group: {
+          _id: "$uuid",
+          totalAchievements: { $sum: 1 },
+          totalPoints: { $sum: "$progress" }, // Suma de puntos de progreso acumulados
+        },
+      },
+      { $sort: { totalAchievements: -1 } }, // Ordenar por la cantidad de logros
+      { $limit: 10 }, // Limitar a los 10 mejores
     ]);
-
-    
 
     // Obtener datos adicionales de cada usuario con `uuid` correspondiente
     const enrichedUsers = await Promise.all(
       topUsers.map(async (user) => {
-        const userData = await User.findOne({ minecraftUUID: user._id.trim() }, "username uuid"); // Ajusta según el modelo de usuario
+        const userData = await User.findOne(
+          { minecraftUUID: user._id.trim() },
+          "username uuid" // Campos necesarios del modelo de usuario
+        );
+
         return userData
           ? {
               id: userData._id,
               username: userData.username,
               totalAchievements: user.totalAchievements,
+              totalPoints: user.totalPoints, // Añadir los puntos acumulados
             }
           : null; // Si no se encuentra el usuario, devuelve null
       })
     );
 
     // Filtrar usuarios no encontrados
-    const validUsers = enrichedUsers.filter(user => user !== null);
+    const validUsers = enrichedUsers.filter((user) => user !== null);
 
     res.status(200).json({
       success: true,
@@ -538,6 +547,7 @@ const getTopAchievements = async (req, res) => {
     });
   }
 };
+
 
 
 module.exports = {
