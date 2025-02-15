@@ -128,7 +128,7 @@ const unfollowUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   try {
-    const data = req.query;
+    const data = req.body;
     console.log("LLEGO Login: ", data);
 
     const existingUser = await User.findOne({ username: data.username });
