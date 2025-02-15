@@ -165,19 +165,45 @@ const loginUser = async (req, res) => {
 
 const getUserById = async (req, res) => {
   try {
-    let data = req.body;
-    if (data.id) {
-      const user_search = await User.findOne({
-        _id: data.id,
+    const { id } = req.body;
+
+    if (!id) {
+      return res.status(400).json({
+        message: "Debe proporcionar un ID de usuario en el cuerpo.",
+        success: false,
       });
-      res.json({ success: true, user: user_search });
-    } else {
-      res.json({ success: false, user: [] });
     }
+
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({
+        message: "Usuario no encontrado.",
+        success: false,
+      });
+    }
+
+    return res.json({
+      success: true,
+      user: {
+        id: user._id,
+        username: user.username || "",
+        mail: user.mail || "",
+        imageUrl: user.imageUrl || "",
+        bio: user.bio || "",
+        followers: user.followers || [],
+        following: user.following || [],
+        minecraftUsername: user.minecraftUsername || ""
+      }
+    });
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({
+      message: "Error interno del servidor.",
+      success: false,
+      error: error.message,
+    });
   }
 };
+
 
 const getUserByUUID = async (req, res) => {
   try {
