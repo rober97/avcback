@@ -1,6 +1,7 @@
 const User = require("../models/userSocial");
 const Post = require("../models/postModel");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const UserAchievement = require("../models/UserAchievement");
 const SystemAchievement = require("../models/SystemAchievement");
 const yaml = require("js-yaml");
@@ -160,6 +161,52 @@ const loginUser = async (req, res) => {
       message: "Error interno del servidor." + error,
       success: false,
     });
+  }
+};
+
+const authLoginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const JWT_SECRET = process.env.JWT_SECRET || 'default'
+
+    // 1. Verificar que lleguen email y password
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Email y contraseña requeridos.' });
+    }
+
+    // 2. Buscar el usuario en la base de datos
+    const user = await User.findOne({ username: email });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Usuario no encontrado.' });
+    }
+
+    // 3. Validar la contraseña (esto es MUY básico, deberías en producción usar bcrypt)
+    if (!bcrypt.compareSync(password, user.password)) {
+      return res.status(401).json({ success: false, message: 'Contraseña incorrecta.' });
+    }
+
+    // 4. Si todo está bien, generar token
+    const payload = {
+      id: user._id,
+      email: user.email,
+      nombre: user.nombre,
+      apellido: user.apellido,
+    };
+
+    const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' }); // Token válido 7 días
+
+    // 5. Responder al frontend
+    return res.status(200).json({
+      success: true,
+      message: 'Login exitoso.',
+      token,
+      user: payload,
+    });
+
+  } catch (error) {
+    console.error('Error en loginUser:', error);
+    return res.status(500).json({ success: false, message: 'Error interno del servidor.' });
   }
 };
 
@@ -548,11 +595,11 @@ const getTopAchievements = async (req, res) => {
 
         return userData
           ? {
-              id: userData._id,
-              username: userData.username,
-              totalAchievements: user.totalAchievements,
-              totalPoints: user.totalPoints, // Añadir los puntos acumulados
-            }
+            id: userData._id,
+            username: userData.username,
+            totalAchievements: user.totalAchievements,
+            totalPoints: user.totalPoints, // Añadir los puntos acumulados
+          }
           : null; // Si no se encuentra el usuario, devuelve null
       })
     );
@@ -595,5 +642,6 @@ module.exports = {
   getTopAchievements,
   getUUIDUser,
   getUserByUUID,
-  searchUsersPaginated
+  searchUsersPaginated,
+  authLoginUser
 };

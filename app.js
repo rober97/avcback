@@ -75,7 +75,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(e => console.log(e))
 
 //Rutas
-app.use('/', require('./src/routes/routes.js'));
+app.use('/api', require('./src/routes/routes.js'));
 
 
 //Control de errores
