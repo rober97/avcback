@@ -48,7 +48,12 @@ const hintSchema = new Schema({
   categoria: {
     type: String,
     default: 'general', // "musical", "motivacional", "divertido", etc.
-  }
+  },
+  reaccionLikes: { type: Number, default: 0 },
+  reaccionSuperLikes: { type: Number, default: 0 },
+  reaccionSkips: { type: Number, default: 0 },
+  reaccionReacts: { type: Number, default: 0 }
+
 });
 
 // Crear modelo

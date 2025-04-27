@@ -127,6 +127,46 @@ const superlikeHint = async (req, res) => {
   }
 };
 
+// Dar reacción personalizada a un hint
+const reactHint = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { tipo } = req.body;
+
+    const hint = await Hint.findById(id);
+    if (!hint) {
+      return res.status(404).json({ message: 'Hint no encontrado.' });
+    }
+
+    // Según el tipo de reacción, aumentamos el contador
+    switch (tipo) {
+      case 'like':
+        hint.reaccionLikes += 1;
+        break;
+      case 'superlike':
+        hint.reaccionSuperLikes += 1;
+        break;
+      case 'skip':
+        hint.reaccionSkips += 1;
+        break;
+      case 'react':
+        hint.reaccionReacts += 1;
+        break;
+      default:
+        return res.status(400).json({ message: 'Tipo de reacción inválido.' });
+    }
+
+    await hint.save();
+
+    return res.status(200).json({ message: 'Reacción registrada.', hint });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error al registrar la reacción.' });
+  }
+};
+
+
 module.exports = {
   listHints,
   addHint,
@@ -134,4 +174,5 @@ module.exports = {
   deleteHint,
   likeHint,
   superlikeHint,
+  reactHint
 };
