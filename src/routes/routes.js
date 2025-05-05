@@ -15,8 +15,8 @@ const marketController = require("../controllers/market");
 const Item = require("../controllers/items");
 const cityController = require("../controllers/cities");
 const achievements = require("../controllers/achievements");
-const hints = require("../controllers/hints"); // 👈 Importamos hints
-
+const hints = require("../controllers/hints"); 
+const reactions  = require("../controllers/reactions"); 
 // Configuración de multer
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -113,9 +113,9 @@ router.get("/hints/user/:userId", (req, res) => hints.listHintsByUser(req, res))
 router.post("/hints", (req, res) => hints.addHint(req, res));
 router.put("/hints/:id", (req, res) => hints.updateHint(req, res));
 router.delete("/hints/:id", (req, res) => hints.deleteHint(req, res));
-router.post("/hints/:id/reaccion", (req, res) => hints.reactHint(req, res));
+//router.post("/hints/:id/reaccion", (req, res) => hints.reactHint(req, res));
 
-
+router.post('/hints/:id/reaccion', (req, res) => reactions.reactHint(req, res));
 // ------------------- SESIONES -------------------
 router.post("/logout", (req, res) => {
   res.status(200).json({ success: true, message: "Sesión cerrada exitosamente." });

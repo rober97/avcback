@@ -3,17 +3,32 @@ const User = require('../models/user');
 const File = require('../models/files');
 const fs = require('fs');
 const { dirname, join } = require('path');
-
+const Reaccion = require('../models/reaccion');
 // Listar todos los hints activos
 const listHints = async (req, res) => {
   try {
-    const hints = await Hint.find({ estado: 'activo' }).populate('userId', 'nombre apellido');
+    const userId = req.query.userId;
+
+    let idsYaReaccionados = [];
+
+    if (userId) {
+      const reacciones = await Reaccion.find({ userId }).select('hintId');
+      idsYaReaccionados = reacciones.map(r => r.hintId);
+    }
+
+    const hints = await Hint.find({
+      estado: 'activo',
+      _id: { $nin: idsYaReaccionados }
+    });
+
     return res.status(200).json(hints);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Error al listar los hints.' });
   }
 };
+
+
 
 // Crear un nuevo hint
 const addHint = async (req, res) => {
