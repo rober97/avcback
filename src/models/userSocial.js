@@ -21,11 +21,11 @@ const userSocialSchema = new Schema({
     bio: String,
     followers: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'usersSocial'
     }],
     following: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'usersSocial'
     }],
     posts: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -34,10 +34,6 @@ const userSocialSchema = new Schema({
     likesGiven: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
-    }],
-    rewardsClaimed: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Reward'
     }],
 
     minecraftUUID: String,

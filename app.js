@@ -7,11 +7,7 @@ const cors = require('cors');
 const rateLimit = require("express-rate-limit");
 const { Server } = require('socket.io');
 const http = require('http');
-
-// Controllers (opcional, si usas funciones globales aquí)
-// const player = require('./src/controllers/player.js');
-// const achievement = require('./src/controllers/achievements.js');
-// const reward = require('./src/controllers/rewards.js');
+const minecraft = require('./src/controllers/minecraft');
 
 // Express y HTTP server
 const app = express();
@@ -78,11 +74,7 @@ io.on('connection', (socket) => {
 });
 
 // ------------------- CONEXIÓN BASE DE DATOS -------------------
-console.log('PASS: ', process.env.PASSWORD)
-console.log('USER: ', process.env.USER)
-console.log('DBNAME: ', process.env.DBNAME)
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@clustershot.15wdu.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
-console.log(uri)
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Base de datos conectada'))
     .catch(e => console.log(e))
@@ -106,11 +98,9 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log('Servidor levantado en el puerto: ' + port);
+    // Conexión persistente con el servidor de Minecraft (canal de entrega de compras)
+    minecraft.connect();
 });
-
-// ------------------- TAREAS PROGRAMADAS (si las necesitas) -------------------
-// reward.createRewardsFromJson()
-// achievement.createAchievementsFromJson()
 
 // ------------------- RECAPTCHA (para integrar a futuro) -------------------
 // Para máxima seguridad, agrega la verificación de reCAPTCHA aquí.

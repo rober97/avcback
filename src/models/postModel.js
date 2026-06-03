@@ -1,47 +1,56 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-const postSchema = new Schema({
+const commentSchema = new Schema(
+  {
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'usersSocial',
-        required: true
+      type: Schema.Types.ObjectId,
+      ref: "usersSocial",
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  { _id: false }
+);
+
+const postSchema = new Schema(
+  {
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "usersSocial",
+      required: true,
     },
     imageUrl: {
-        type: String,
-        required: false
+      type: String,
+      default: "",
+      trim: true,
     },
     description: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      trim: true,
     },
-    likes: [{
+    likes: [
+      {
         type: Schema.Types.ObjectId,
-        ref: 'usersSocial' // Asumo que quieres hacer referencia a la misma colección que los comentarios.
-    }],
-    comments: [{
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: 'usersSocial',
-            required: true
-        },
-        text: {
-            type: String,
-            required: true
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now
-        }
-    }],
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+        ref: "usersSocial",
+      },
+    ],
+    comments: [commentSchema],
+  },
+  {
+    timestamps: true,
+    collection: "postschemas",
+  }
+);
 
-// Crear modelo
-const PostModel = mongoose.model('postSchema', postSchema);
-
-module.exports = PostModel;
+module.exports = mongoose.models.Post || mongoose.model("Post", postSchema);

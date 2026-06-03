@@ -1,44 +1,55 @@
 const net = require('net');
 
-const MINECRAFT_SERVER_HOST = '209.192.187.106'; // La dirección IP de tu servidor de Minecraft
-const MINECRAFT_SERVER_PORT = 8029; // El puerto que esté escuchando tu plugin de Spigot
+// Conexión TCP al plugin socketAvC del servidor de Minecraft.
+// Es el canal por el que se entregan los productos (comandos de consola).
+const MINECRAFT_HOST = process.env.MINECRAFT_HOST || '209.192.187.106';
+const MINECRAFT_PORT = parseInt(process.env.MINECRAFT_PORT || '8029', 10);
 
-let clientSocket = new net.Socket();
-let reconnectTimeout = null; // Para controlar los intentos de reconexión
+let clientSocket = null;
+let connected = false;
+let reconnectTimeout = null;
 
-const connectToMinecraftServer = () => {
-  clientSocket.connect(MINECRAFT_SERVER_PORT, MINECRAFT_SERVER_HOST, () => {
+const scheduleReconnect = () => {
+  if (reconnectTimeout) return;
+  reconnectTimeout = setTimeout(() => {
+    reconnectTimeout = null;
+    connect();
+  }, 5000);
+};
+
+const connect = () => {
+  clientSocket = new net.Socket();
+
+  clientSocket.connect(MINECRAFT_PORT, MINECRAFT_HOST, () => {
+    connected = true;
     console.log('\x1b[32m%s\x1b[0m', 'Conectado al servidor de Minecraft!');
-    
-    // Limpiar el timeout si se reconecta con éxito
-    if (reconnectTimeout) {
-      clearTimeout(reconnectTimeout);
-      reconnectTimeout = null;
-    }
   });
 
   clientSocket.on('data', (data) => {
-    console.log('\x1b[36m%s\x1b[0m', 'Recibido: ' + data);
+    console.log('\x1b[36m%s\x1b[0m', 'Recibido de Minecraft: ' + data);
   });
 
   clientSocket.on('close', () => {
-    console.log('\x1b[31m%s\x1b[0m', 'Conexión cerrada, intentando reconectar...');
-    // Evitar múltiples reconexiones en paralelo
-    if (!reconnectTimeout) {
-      reconnectTimeout = setTimeout(connectToMinecraftServer, 5000); // Intentar reconectar después de 5 segundos
-    }
+    connected = false;
+    console.log('\x1b[31m%s\x1b[0m', 'Conexión con Minecraft cerrada, reintentando...');
+    scheduleReconnect();
   });
 
   clientSocket.on('error', (err) => {
-    console.error('\x1b[31m%s\x1b[0m', 'Error en la conexión:', err.message);
-    clientSocket.destroy(); // Destruir el socket en caso de error
-    if (!reconnectTimeout) {
-      reconnectTimeout = setTimeout(connectToMinecraftServer, 5000); // Intentar reconectar después de 5 segundos
-    }
+    connected = false;
+    console.error('\x1b[31m%s\x1b[0m', 'Error en socket de Minecraft:', err.message);
+    clientSocket.destroy(); // dispara 'close' -> reintento
   });
 };
 
-// Iniciar la conexión al servidor de Minecraft
-connectToMinecraftServer();
+const isConnected = () => connected && !!clientSocket && clientSocket.writable;
 
-module.exports = clientSocket;
+// Envía un comando de consola al servidor. Lanza error si no hay conexión.
+const sendCommand = (command) => {
+  if (!isConnected()) {
+    throw new Error('Socket de Minecraft no conectado');
+  }
+  clientSocket.write(command + '\n');
+};
+
+module.exports = { connect, sendCommand, isConnected };
