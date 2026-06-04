@@ -18,6 +18,26 @@ const playerStatsSchema = new Schema(
     timePlayed: { type: Number, default: 0 },
     distanceWalked: { type: Number, default: 0 },
     itemsCrafted: { type: Number, default: 0 },
+    // Rango
+    rank: String,
+    rankDisplay: String,
+    // Experiencia
+    xpLevel: { type: Number, default: 0 },
+    xpProgress: { type: Number, default: 0 },
+    totalExpPoints: { type: Number, default: 0 },
+    // Estado en vivo
+    health: { type: Number, default: 0 },
+    maxHealth: { type: Number, default: 20 },
+    foodLevel: { type: Number, default: 0 },
+    saturation: { type: Number, default: 0 },
+    gameMode: String,
+    online: { type: Boolean, default: false },
+    // Ubicación
+    lastWorld: String,
+    lastX: Number,
+    lastY: Number,
+    lastZ: Number,
+    inventoryUsed: { type: Number, default: 0 },
     firstJoin: Number,
     lastSeen: Number,
     updatedAt: Number,

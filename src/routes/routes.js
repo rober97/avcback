@@ -62,6 +62,7 @@ router.post("/new-player", (req, res) => player.newPlayer(req, res));
 // ------------------- RANKINGS -------------------
 router.get("/rankings", (req, res) => playerStats.getRankings(req, res));
 router.get("/rankings/stats", (req, res) => playerStats.getGlobalStats(req, res));
+router.get("/player-stats/:id", (req, res) => playerStats.getPlayerStats(req, res));
 
 // ------------------- POST -------------------
 router.post("/new-post", upload.single("image"), (req, res) => post.newPost(req, res));

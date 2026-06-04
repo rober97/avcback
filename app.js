@@ -99,7 +99,7 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log('Servidor levantado en el puerto: ' + port);
     // Conexión persistente con el servidor de Minecraft (canal de entrega de compras)
-    minecraft.connect();
+    //minecraft.connect();
 });
 
 // ------------------- RECAPTCHA (para integrar a futuro) -------------------

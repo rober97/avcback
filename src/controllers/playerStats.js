@@ -16,7 +16,7 @@ const SORTABLE = {
 
 // Proyección de los campos que enviamos al front.
 const PROJECTION =
-  "uuid playerName kills deaths kdr mobsKilled money blocksBroken blocksPlaced timePlayed distanceWalked itemsCrafted lastSeen";
+  "uuid playerName kills deaths kdr mobsKilled money blocksBroken blocksPlaced timePlayed distanceWalked itemsCrafted firstJoin lastSeen";
 
 // GET /api/rankings?category=kills&limit=50
 // Devuelve el top de jugadores ordenado por la categoría solicitada.
@@ -85,7 +85,45 @@ const getGlobalStats = async (req, res) => {
   }
 };
 
+// GET /api/player-stats/:id
+// Devuelve las estadísticas de un jugador por su uuid (o por playerName como fallback).
+const getPlayerStats = async (req, res) => {
+  try {
+    const id = (req.params.id || "").trim();
+    if (!id) {
+      return res.status(400).json({ success: false, message: "Falta el identificador del jugador" });
+    }
+
+    // Devolvemos el documento completo: el perfil aprovecha todos los campos
+    // (rango, xp, salud, gameMode, online, ubicación, etc.).
+    const player = await PlayerStats.findOne(
+      {
+        $or: [
+          { uuid: id },
+          { uuid: id.replace(/-/g, "") },
+          { playerName: new RegExp(`^${id}$`, "i") },
+        ],
+      },
+      { __v: 0 }
+    ).lean();
+
+    if (!player) {
+      return res.status(404).json({ success: false, message: "Jugador no encontrado" });
+    }
+
+    res.status(200).json({ success: true, player });
+  } catch (error) {
+    console.error("Error al obtener estadísticas del jugador:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error al obtener estadísticas del jugador",
+      error,
+    });
+  }
+};
+
 module.exports = {
   getRankings,
   getGlobalStats,
+  getPlayerStats,
 };
